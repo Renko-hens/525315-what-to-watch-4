@@ -1,5 +1,5 @@
 import React, {PureComponent} from "react";
-import VideoPlayer from "../../components/video-player/video-player.jsx"
+import CardMovie from "../../components/movie-card/movie-card.jsx";
 
 const VIDEO_DELAY_MSECONDS = 1000;
 
@@ -15,7 +15,7 @@ const withVideoPlayer = (Component) => {
       this.timeOutCard = null;
     }
 
-    _setTimeOutCard(movie) {
+    _setTimeOutActiveCard(movie) {
       this.timeOutCard = setTimeout(() => {
         this.setState({
           activeMovieCard: movie
@@ -23,33 +23,33 @@ const withVideoPlayer = (Component) => {
       }, VIDEO_DELAY_MSECONDS);
     }
 
-    _clearTimeOutCard() {
+    _clearTimeOutActiveCard() {
       this.setState(() => ({
         activeMovieCard: null,
       }));
 
-      clearTimeout(this.state.timeOutCard);
+      clearTimeout(this.timeOutCard);
     }
-
 
     render() {
       return <Component
         {...this.props}
 
-        renderPlayer = {(poster, preview, isPlaying) => {
-          if (isPlaying) {
-            return (
-              <VideoPlayer
-                isPlaying={isPlaying}
-                poster={poster}
-                preview={preview}
-              />
-            );
-          } else {
-            return (
-              <img src={poster.src} alt={poster.alt} width="280" height="175"/>
-            );
-          }
+        renderCard = {(movie, onClick, index) => {
+          return (
+            <CardMovie
+              key={`${movie.title}-${index}`}
+              movie={movie}
+              cardMovieHoverHandler={(activeMovieCard) => {
+                this._setTimeOutActiveCard(activeMovieCard);
+              }}
+              cardMovieLeaveHandler={() => {
+                this._clearTimeOutActiveCard();
+              }}
+              onClick={onClick}
+              isPlaying={this.state.activeMovieCard !== null && movie.id === this.state.activeMovieCard.id}
+            />
+          );
         }}
       />;
     }
