@@ -215,9 +215,7 @@ class CardMovieDetails extends PureComponent {
       </React.Fragment>
     );
   }
-
 }
-
 
 export default CardMovieDetails;
 

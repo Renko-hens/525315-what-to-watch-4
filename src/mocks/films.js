@@ -6,6 +6,7 @@ const promoMovie = {
 
 const movies = [
   {
+    id: 1,
     background: {
       src: `img/pirats.jpg`,
       alt: `Пираты карбинского моря`,
@@ -39,13 +40,17 @@ const movies = [
       src: `img/poster-pirates.jpg`,
       alt: `Пираты карбинского моря`,
     },
+    preview: {
+      src: `http://techslides.com/demos/sample-videos/small.webm`,
+    },
     addressPage: `movie-page.html`,
   },
 
   {
+    id: 2,
     background: {
       src: `img/pirats.jpg`,
-      alt: `Пираты карбинского моря`,
+      alt: `Пираты карбинского моря2`,
     },
     title: `Преступление Гринлевальда`,
     genre: `Fantastic`,
@@ -71,13 +76,17 @@ const movies = [
       src: `img/fantastic-beasts-the-crimes-of-grindelwald.jpg`,
       alt: `Преступление Гринлевальда`,
     },
+    preview: {
+      src: `https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm`,
+    },
     addressPage: `movie-page.html`,
   },
 
   {
+    id: 3,
     background: {
       src: `img/pirats.jpg`,
-      alt: `Пираты карбинского моря`,
+      alt: `Пираты карбинского моря3`,
     },
     title: `Нет страны для старого человека`,
     genre: `Fantastic`,
@@ -103,13 +112,17 @@ const movies = [
       src: `img/no-country-for-old-men.jpg`,
       alt: `Нет страны для старого человека`,
     },
+    preview: {
+      src: `https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm`,
+    },
     addressPage: `movie-page-in-list.html`,
   },
 
   {
+    id: 4,
     background: {
       src: `img/pirats.jpg`,
-      alt: `Пираты карбинского моря`,
+      alt: `Пираты карбинского моря4`,
     },
     title: `Отель Гранд Будапешт`,
     genre: `Fantastic`,
@@ -135,13 +148,17 @@ const movies = [
       src: `img/the-grand-budapest-hotel-poster.jpg`,
       alt: `Отель Гранд Будапешт`,
     },
+    preview: {
+      src: `https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4`,
+    },
     addressPage: `movie-page-in-list.html`,
   },
 
   {
+    id: 5,
     background: {
       src: `img/pirats.jpg`,
-      alt: `Пираты карбинского моря`,
+      alt: `Пираты карбинского моря: Насраных берега`,
     },
     title: `Нам надо поговорить о Кевине`,
     genre: `Fantastic`,
@@ -167,15 +184,19 @@ const movies = [
       src: `img/we-need-to-talk-about-kevin.jpg`,
       alt: `Нам надо поговорить о Кевине`,
     },
+    preview: {
+      src: `https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4`,
+    },
     addressPage: `movie-page-in-list.html`,
   },
 
   {
+    id: 6,
     background: {
       src: `img/pirats.jpg`,
       alt: `Пираты карбинского моря`,
     },
-    title: `Пираты карбинского моря`,
+    title: `Пираты карбинского моря2`,
     genre: `Fantastic`,
     year: `1996`,
     rating: {
@@ -199,15 +220,19 @@ const movies = [
       src: `img/fantastic-beasts-the-crimes-of-grindelwald.jpg`,
       alt: `Пираты карбинского моря`,
     },
+    preview: {
+      src: `https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4`,
+    },
     addressPage: `movie-page-in-list.html`,
   },
 
   {
+    id: 7,
     background: {
       src: `img/pirats.jpg`,
       alt: `Пираты карбинского моря`,
     },
-    title: `Пираты карбинского моря`,
+    title: `Пираты карбинского моря3`,
     genre: `Fantastic`,
     year: `1996`,
     rating: {
@@ -231,15 +256,19 @@ const movies = [
       src: `img/fantastic-beasts-the-crimes-of-grindelwald.jpg`,
       alt: `Пираты карбинского моря`,
     },
+    preview: {
+      src: `https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4`,
+    },
     addressPage: `movie-page-in-list.html`,
   },
 
   {
+    id: 8,
     background: {
       src: `img/pirats.jpg`,
       alt: `Пираты карбинского моря`,
     },
-    title: `Пираты карбинского моря`,
+    title: `Пираты карбинского моря4`,
     genre: `Fantastic`,
     year: `1996`,
     rating: {
@@ -262,6 +291,9 @@ const movies = [
     poster: {
       src: `img/fantastic-beasts-the-crimes-of-grindelwald.jpg`,
       alt: `Пираты карбинского моря`,
+    },
+    preview: {
+      src: `https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4`,
     },
     addressPage: `movie-page-in-list.html`,
   },
