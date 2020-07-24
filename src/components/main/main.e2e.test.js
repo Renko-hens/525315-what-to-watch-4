@@ -21,6 +21,9 @@ const movies = [
       src: `img/johnny-english.jpg`,
       alt: `Пираты карбинского моря`,
     },
+    preview: {
+      src: `http://techslides.com/demos/sample-videos/small.webm`,
+    },
     addressPage: `movie-page.html`,
   },
   {
@@ -28,6 +31,9 @@ const movies = [
     poster: {
       src: `img/fantastic-beasts-the-crimes-of-grindelwald.jpg`,
       alt: `Преступление Гринлевальда`,
+    },
+    preview: {
+      src: `http://techslides.com/demos/sample-videos/small.webm`,
     },
     addressPage: `movie-page.html`,
   },

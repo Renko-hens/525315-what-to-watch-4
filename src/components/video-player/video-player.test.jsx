@@ -1,6 +1,6 @@
 import React from "react";
 import renderer from "react-test-renderer";
-import CardMovie from "./movie-card.jsx";
+import VideoPlayer from "./video-player.jsx";
 
 const movieCard = {
   title: `Пираты карбинского моря`,
@@ -14,18 +14,18 @@ const movieCard = {
   addressPage: `movie-page.html`,
 };
 
-describe(`Render CardMovieComponent`, () => {
-  it(`Show component`, () => {
 
+describe(`Render VideoPlayer Component`, () => {
+  it(`Redner VideoPlayer`, () => {
     const tree = renderer.create(
-        <CardMovie
-          movie={movieCard}
-          onClick={() => {}}
-          cardMovieHoverHandler={() => {}}
-          cardMovieLeaveHandler={() => {}}
+        <VideoPlayer
           isPlaying={false}
-        />
-    ).toJSON();
+          poster={movieCard.poster}
+          preview={movieCard.preview}
+        />, {
+          createNodeMock: () => {
+            return {};
+          }}).toJSON();
 
     expect(tree).toMatchSnapshot();
   });

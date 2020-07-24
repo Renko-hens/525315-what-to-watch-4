@@ -43,6 +43,9 @@ const movies = [
       src: `img/poster-pirates.jpg`,
       alt: `Пираты карбинского моря`,
     },
+    preview: {
+      src: `http://techslides.com/demos/sample-videos/small.webm`,
+    },
     addressPage: `movie-page.html`,
   },
 ];

@@ -1,6 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
-import VideoPlayer from "../video-player/video-player.jsx"
+import VideoPlayer from "../video-player/video-player.jsx";
+
+const IMAGE_WIDTH = `280`;
+const IMAGE_HEIGHT = `175`;
 
 const CardMovie = (props) => {
   const {movie, onClick, cardMovieHoverHandler, cardMovieLeaveHandler, isPlaying} = props;
@@ -17,7 +20,11 @@ const CardMovie = (props) => {
       }}
     >
       <div className="small-movie-card__image">
-        {isPlaying ? <VideoPlayer isPlaying={isPlaying} poster={poster} preview={preview}/> : <img src={poster.src} alt={poster.alt} width="280" height="175"/>}
+        {
+          isPlaying ?
+            <VideoPlayer poster={poster} preview={preview}/>
+            : <img src={poster.src} alt={poster.alt} width={IMAGE_WIDTH} height={IMAGE_HEIGHT}/>
+        }
       </div>
       <h3 className="small-movie-card__title">
         <a
