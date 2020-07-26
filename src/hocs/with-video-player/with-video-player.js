@@ -52,7 +52,7 @@ const withVideoPlayer = (Component) => {
                 this._clearTimeOutActiveCard();
               }}
               onClick={onClick}
-              isPlaying={this.state.activeMovieCard !== null && movie.id === this.state.activeMovieCard.id}
+              isVideoActive={this.state.activeMovieCard !== null && movie.id === this.state.activeMovieCard.id}
             />
           );
         }}

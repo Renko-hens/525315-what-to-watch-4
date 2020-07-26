@@ -2,11 +2,14 @@ import React from "react";
 import PropTypes from "prop-types";
 import VideoPlayer from "../video-player/video-player.jsx";
 
+import withActiveVideoStatus from "../../hocs/with-playing-video-status/with-playing-video-status.js";
+
+const VideoPlayerWithVideoStatus = withActiveVideoStatus(VideoPlayer);
 const IMAGE_WIDTH = `280`;
 const IMAGE_HEIGHT = `175`;
 
 const CardMovie = (props) => {
-  const {movie, onClick, cardMovieHoverHandler, cardMovieLeaveHandler, isPlaying} = props;
+  const {movie, onClick, cardMovieHoverHandler, cardMovieLeaveHandler, isVideoActive} = props;
   const {title, poster, addressPage, preview} = movie;
 
   return (
@@ -21,8 +24,8 @@ const CardMovie = (props) => {
     >
       <div className="small-movie-card__image">
         {
-          isPlaying ?
-            <VideoPlayer poster={poster} preview={preview}/>
+          isVideoActive ?
+            <VideoPlayerWithVideoStatus isActive={isVideoActive} poster={poster} preview={preview}/>
             : <img src={poster.src} alt={poster.alt} width={IMAGE_WIDTH} height={IMAGE_HEIGHT}/>
         }
       </div>
@@ -56,7 +59,7 @@ CardMovie.propTypes = {
   onClick: PropTypes.func.isRequired,
   cardMovieHoverHandler: PropTypes.func.isRequired,
   cardMovieLeaveHandler: PropTypes.func.isRequired,
-  isPlaying: PropTypes.bool.isRequired,
+  isVideoActive: PropTypes.bool.isRequired,
 };
 
 export default CardMovie;
