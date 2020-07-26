@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 
 const VideoPlayer = (props) => {
   const {videoRefer} = props;
+
   return (
     <video className="player__video"
       ref={videoRefer}
@@ -12,7 +13,7 @@ const VideoPlayer = (props) => {
 };
 
 VideoPlayer.propTypes = {
-  videoRefer: PropTypes.shape({}).isRequired,
+  videoRefer: PropTypes.shape({component: PropTypes.instanceOf(React.Component)}),
 };
 
 export default VideoPlayer;

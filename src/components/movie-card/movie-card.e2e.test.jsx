@@ -29,7 +29,7 @@ describe(`test component Movie Card`, () => {
           onClick={onClick}
           cardMovieHoverHandler={() => {}}
           cardMovieLeaveHandler={() => {}}
-          isPlaying={false}
+          isVideoActive={false}
         />
     );
 
@@ -53,7 +53,7 @@ describe(`test component Movie Card`, () => {
           onClick={() => {}}
           cardMovieHoverHandler={onHover}
           cardMovieLeaveHandler={() => {}}
-          isPlaying={false}
+          isVideoActive={false}
         />
     );
 
@@ -72,7 +72,7 @@ describe(`test component Movie Card`, () => {
           onClick={() => {}}
           cardMovieHoverHandler={() => {}}
           cardMovieLeaveHandler={onLeave}
-          isPlaying={true}
+          isVideoActive={false}
         />
     );
 

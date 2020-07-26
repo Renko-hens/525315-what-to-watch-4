@@ -23,7 +23,7 @@ describe(`Render CardMovieComponent`, () => {
           onClick={() => {}}
           cardMovieHoverHandler={() => {}}
           cardMovieLeaveHandler={() => {}}
-          isPlaying={false}
+          isVideoActive={false}
         />
     ).toJSON();
 
