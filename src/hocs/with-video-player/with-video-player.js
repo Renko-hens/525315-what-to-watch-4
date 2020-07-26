@@ -31,6 +31,11 @@ const withVideoPlayer = (Component) => {
       clearTimeout(this.timeOutCard);
     }
 
+    // Удаляет и очищает таймаут для запуска видео после клика на карточку с фильмом
+    componentWillUnmount() {
+      this._clearTimeOutActiveCard();
+    }
+
     render() {
       return <Component
         {...this.props}

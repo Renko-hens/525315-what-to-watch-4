@@ -47,7 +47,6 @@ describe(``, () => {
     const tree = renderer.create(
         <CardMovieDetails
           movie={movieCardDetails}
-          onClick = {() => {}}
         />
     ).toJSON();
 

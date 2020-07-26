@@ -42,7 +42,7 @@ export default class VideoPlayer extends PureComponent {
   }
 
   componentWillUnmount() {
-    const video = this._videoRef.current;
+    let video = this._videoRef.current;
 
     video.src = ``;
     video.autoplay = null;
@@ -53,6 +53,7 @@ export default class VideoPlayer extends PureComponent {
     video.width = null;
     video.height = null;
     video.control = null;
+    video = ``;
   }
 
   render() {
