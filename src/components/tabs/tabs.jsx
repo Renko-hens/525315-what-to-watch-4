@@ -172,4 +172,5 @@ Tabs.propTypes = {
     }).isRequired,
 
   }).isRequired,
+  children: PropTypes.node.isRequired,
 };
