@@ -81,14 +81,11 @@ export default CardMovieOverview;
 
 CardMovieOverview.propTypes = {
   movie: PropTypes.shape({
-
     rating: PropTypes.shape({
       score: PropTypes.number.isRequired,
       count: PropTypes.number.isRequired,
     }).isRequired,
-
     descriptions: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
-
     directors: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
     starrings: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
   }).isRequired,

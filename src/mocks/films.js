@@ -44,6 +44,8 @@ const movies = [
       src: `http://techslides.com/demos/sample-videos/small.webm`,
     },
     addressPage: `movie-page.html`,
+    runTime: 99,
+    released: 2014,
   },
 
   {
@@ -57,7 +59,6 @@ const movies = [
     year: `1996`,
     rating: {
       score: 8.2,
-      level: `Very good`,
       count: 240,
     },
     descriptions: [
@@ -80,6 +81,8 @@ const movies = [
       src: `https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm`,
     },
     addressPage: `movie-page.html`,
+    runTime: 99,
+    released: 2014,
   },
 
   {
@@ -93,7 +96,6 @@ const movies = [
     year: `1996`,
     rating: {
       score: 8.2,
-      level: `Very good`,
       count: 240,
     },
     descriptions: [
@@ -116,6 +118,8 @@ const movies = [
       src: `https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm`,
     },
     addressPage: `movie-page-in-list.html`,
+    runTime: 99,
+    released: 2014,
   },
 
   {
@@ -129,7 +133,6 @@ const movies = [
     year: `1996`,
     rating: {
       score: 8.2,
-      level: `Very good`,
       count: 240,
     },
     descriptions: [
@@ -152,6 +155,8 @@ const movies = [
       src: `https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4`,
     },
     addressPage: `movie-page-in-list.html`,
+    runTime: 99,
+    released: 2014,
   },
 
   {
@@ -165,7 +170,6 @@ const movies = [
     year: `1996`,
     rating: {
       score: 8.2,
-      level: `Very good`,
       count: 240,
     },
     descriptions: [
@@ -188,6 +192,8 @@ const movies = [
       src: `https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4`,
     },
     addressPage: `movie-page-in-list.html`,
+    runTime: 99,
+    released: 2014,
   },
 
   {
@@ -201,7 +207,6 @@ const movies = [
     year: `1996`,
     rating: {
       score: 8.2,
-      level: `Very good`,
       count: 240,
     },
     descriptions: [
@@ -224,6 +229,8 @@ const movies = [
       src: `https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4`,
     },
     addressPage: `movie-page-in-list.html`,
+    runTime: 99,
+    released: 2014,
   },
 
   {
@@ -237,7 +244,6 @@ const movies = [
     year: `1996`,
     rating: {
       score: 8.2,
-      level: `Very good`,
       count: 240,
     },
     descriptions: [
@@ -260,6 +266,8 @@ const movies = [
       src: `https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4`,
     },
     addressPage: `movie-page-in-list.html`,
+    runTime: 99,
+    released: 2014,
   },
 
   {
@@ -273,7 +281,6 @@ const movies = [
     year: `1996`,
     rating: {
       score: 8.2,
-      level: `Very good`,
       count: 240,
     },
     descriptions: [
@@ -296,7 +303,144 @@ const movies = [
       src: `https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4`,
     },
     addressPage: `movie-page-in-list.html`,
+    runTime: 99,
+    released: 2014,
   },
 ];
 
-export {movies, promoMovie};
+const moviesComments = [
+  // id1
+  [
+    {
+      id: 1,
+      user: {
+        id: 5,
+        name: `Kate Muir`,
+      },
+      rating: 8.9,
+      comment: `Discerning travellers and Wes Anderson fans will luxuriate in the glorious Mittel-European kitsch of one of the director's funniest and most exquisitely designed movies in years.`,
+      date: `2019-05-08T14:13:56.569Z`,
+    },
+    {
+      id: 1,
+      user: {
+        id: 5,
+        name: `Kate Muir`,
+      },
+      rating: 8.9,
+      comment: `Discerning travellers and Wes Anderson fans will luxuriate in the glorious Mittel-European kitsch of one of the director's funniest and most exquisitely designed movies in years.`,
+      date: `2019-05-08T14:13:56.569Z`,
+    },
+    {
+      id: 1,
+      user: {
+        id: 10,
+        name: `Kate Musz`,
+      },
+      rating: 8.9,
+      comment: `Discerning travellers and Wes Anderson fans will luxuriate in the glorious Mittel-European kitsch of one of the director's funniest and most exquisitely designed movies in years.`,
+      date: `2019-05-08T14:13:56.569Z`,
+    },
+  ],
+  // id2
+  [
+    {
+      id: 2,
+      user: {
+        id: 4,
+        name: `Kate Muir2`,
+      },
+      rating: 8.9,
+      comment: `Discerning travellers and Wes Anderson fans will luxuriate in the glorious Mittel-European kitsch of one of the director's funniest and most exquisitely designed movies in years.`,
+      date: `2019-05-08T14:13:56.569Z`,
+    },
+    {
+      id: 2,
+      user: {
+        id: 4,
+        name: `Kate Muir2`,
+      },
+      rating: 8.9,
+      comment: `Discerning travellers and Wes Anderson fans will luxuriate in the glorious Mittel-European kitsch of one of the director's funniest and most exquisitely designed movies in years.`,
+      date: `2019-05-08T14:13:56.569Z`,
+    },
+    {
+      id: 2,
+      user: {
+        id: 4,
+        name: `Kate Muir2`,
+      },
+      rating: 8.9,
+      comment: `Discerning travellers and Wes Anderson fans will luxuriate in the glorious Mittel-European kitsch of one of the director's funniest and most exquisitely designed movies in years.`,
+      date: `2019-05-08T14:13:56.569Z`,
+    },
+  ],
+  // id3
+  [
+    {
+      id: 3,
+      user: {
+        id: 4,
+        name: `Kate Muir3`,
+      },
+      rating: 8.9,
+      comment: `Discerning travellers and Wes Anderson fans will luxuriate in the glorious Mittel-European kitsch of one of the director's funniest and most exquisitely designed movies in years.`,
+      date: `2019-05-08T14:13:56.569Z`,
+    },
+    {
+      id: 3,
+      user: {
+        id: 4,
+        name: `Kate Muir3`,
+      },
+      rating: 8.9,
+      comment: `Discerning travellers and Wes Anderson fans will luxuriate in the glorious Mittel-European kitsch of one of the director's funniest and most exquisitely designed movies in years.`,
+      date: `2019-05-08T14:13:56.569Z`,
+    },
+    {
+      id: 3,
+      user: {
+        id: 4,
+        name: `Kate Muir3`,
+      },
+      rating: 8.9,
+      comment: `Discerning travellers and Wes Anderson fans will luxuriate in the glorious Mittel-European kitsch of one of the director's funniest and most exquisitely designed movies in years.`,
+      date: `2019-05-08T14:13:56.569Z`,
+    },
+  ],
+  // id4
+  [
+    {
+      id: 4,
+      user: {
+        id: 4,
+        name: `Kate Muir4`,
+      },
+      rating: 8.9,
+      comment: `Discerning travellers and Wes Anderson fans will luxuriate in the glorious Mittel-European kitsch of one of the director's funniest and most exquisitely designed movies in years.`,
+      date: `2019-05-08T14:13:56.569Z`,
+    },
+    {
+      id: 4,
+      user: {
+        id: 4,
+        name: `Kate Muir4`,
+      },
+      rating: 8.9,
+      comment: `Discerning travellers and Wes Anderson fans will luxuriate in the glorious Mittel-European kitsch of one of the director's funniest and most exquisitely designed movies in years.`,
+      date: `2019-05-08T14:13:56.569Z`,
+    },
+    {
+      id: 4,
+      user: {
+        id: 4,
+        name: `Kate Muir4`,
+      },
+      rating: 8.9,
+      comment: `Discerning travellers and Wes Anderson fans will luxuriate in the glorious Mittel-European kitsch of one of the director's funniest and most exquisitely designed movies in years.`,
+      date: `2019-05-08T14:13:56.569Z`,
+    },
+  ],
+];
+
+export {movies, promoMovie, moviesComments};

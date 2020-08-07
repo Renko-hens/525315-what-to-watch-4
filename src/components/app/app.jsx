@@ -3,8 +3,7 @@ import Main from "../main/main.jsx";
 import PropTypes from "prop-types";
 import {BrowserRouter, Route, Switch} from "react-router-dom";
 
-import CardMovieDetaited from "../movie-card-detailted/movie-card-detailted.jsx";
-
+import CardMovieDetailted from "../movie-card-detailted/movie-card-detailted.jsx";
 
 class App extends PureComponent {
   constructor(props) {
@@ -16,7 +15,7 @@ class App extends PureComponent {
   }
 
   _renderApp() {
-    const {promo, movies} = this.props;
+    const {promo, movies, moviesComments} = this.props;
     const {selectedCardMovie} = this.state;
 
     if (selectedCardMovie === null) {
@@ -35,8 +34,9 @@ class App extends PureComponent {
 
     if (selectedCardMovie !== null) {
       return (
-        <CardMovieDetaited
+        <CardMovieDetailted
           movie={selectedCardMovie}
+          moviesComments={moviesComments}
         />
       );
     }
@@ -45,7 +45,7 @@ class App extends PureComponent {
   }
 
   render() {
-    const {movies} = this.props;
+    const {movies, moviesComments} = this.props;
 
     return (
       <BrowserRouter>
@@ -56,9 +56,9 @@ class App extends PureComponent {
           </Route>
 
           <Route exact path="/movie-page-details">
-            <CardMovieDetaited
+            <CardMovieDetailted
               movie={movies[0]}
-              onClick = {() => {}}
+              moviesComments={moviesComments}
             />
           </Route>
 
@@ -75,6 +75,7 @@ App.propTypes = {
     releaseDate: PropTypes.string.isRequired,
   }).isRequired,
   movies: PropTypes.array.isRequired,
+  moviesComments: PropTypes.array.isRequired,
 };
 
 export default App;

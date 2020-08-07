@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import App from "./components/app/app.jsx";
-import {movies, promoMovie} from "./mocks/films.js";
+import {movies, promoMovie, moviesComments} from "./mocks/films.js";
 
 const init = () => {
 
@@ -9,6 +9,7 @@ const init = () => {
       <App
         promo = {promoMovie}
         movies = {movies}
+        moviesComments = {moviesComments}
       />,
       document.querySelector(`#root`));
 };
