@@ -1,6 +1,6 @@
 import React from "react";
 import renderer from "react-test-renderer";
-import CardMovieDetails from "./movie-page-details.jsx";
+import CardMovieDetails from "./movie-page-details.jsx.js";
 
 const movieCardDetails = {
   background: {

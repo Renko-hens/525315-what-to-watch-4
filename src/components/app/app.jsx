@@ -3,8 +3,7 @@ import Main from "../main/main.jsx";
 import PropTypes from "prop-types";
 import {BrowserRouter, Route, Switch} from "react-router-dom";
 
-import Tabs from "../tabs/tabs.jsx";
-import CardMovieDetails from "../movie-page-details/movie-page-details.jsx";
+import CardMovieDetaited from "../movie-card-detailted/movie-card-detailted.jsx";
 
 
 class App extends PureComponent {
@@ -36,14 +35,9 @@ class App extends PureComponent {
 
     if (selectedCardMovie !== null) {
       return (
-        <Tabs
-          onClick = {() => {}}
+        <CardMovieDetaited
           movie={selectedCardMovie}
-        >
-          <CardMovieDetails
-            movie={selectedCardMovie}
-          />
-        </Tabs>
+        />
       );
     }
 
@@ -62,7 +56,7 @@ class App extends PureComponent {
           </Route>
 
           <Route exact path="/movie-page-details">
-            <CardMovieDetails
+            <CardMovieDetaited
               movie={movies[0]}
               onClick = {() => {}}
             />
