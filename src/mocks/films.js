@@ -306,6 +306,43 @@ const movies = [
     runTime: 99,
     released: 2014,
   },
+
+  {
+    id: 9,
+    background: {
+      src: `img/pirats.jpg`,
+      alt: `Пираты карбинского моря`,
+    },
+    title: `Пираты карбинского моря4`,
+    genre: `Fantastic`,
+    year: `1996`,
+    rating: {
+      score: 8.2,
+      count: 240,
+    },
+    descriptions: [
+      `In the 1930s, the Grand Budapest Hotel is a popular European ski resort, presided over by concierge Gustave H. (Ralph Fiennes). Zero, a junior lobby boy, becomes Gustave's friend and protege.`,
+      `Gustave prides himself on providing first-className service to the hotel's guests, including satisfying the sexual needs of the many elderly women who stay there. When one of Gustave's lovers dies mysteriously, Gustave finds himself the recipient of a priceless painting and the chief suspect in her murder.`
+    ],
+    directors: [
+      `Sas`,
+      `Kek`
+    ],
+    starrings: [
+      `John Wick`,
+      `John Dutton`
+    ],
+    poster: {
+      src: `img/fantastic-beasts-the-crimes-of-grindelwald.jpg`,
+      alt: `Пираты карбинского моря`,
+    },
+    preview: {
+      src: `https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4`,
+    },
+    addressPage: `movie-page-in-list.html`,
+    runTime: 99,
+    released: 2014,
+  },
 ];
 
 const moviesComments = [

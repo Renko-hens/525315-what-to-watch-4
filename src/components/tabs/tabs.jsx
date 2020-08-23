@@ -12,7 +12,7 @@ class Tabs extends PureComponent {
     super(props);
 
     this.state = {
-      selectedTabCard: TabType.REVIEWS,
+      selectedTabCard: TabType.OVERVIEW,
     };
   }
 
@@ -49,18 +49,47 @@ class Tabs extends PureComponent {
   }
 
   render() {
+    const {selectedTabCard} = this.state;
+
     return (
       <React.Fragment>
         <nav className="movie-nav movie-card__nav">
           <ul className="movie-nav__list">
-            <li className="movie-nav__item movie-nav__item--active">
-              <a href="#" className="movie-nav__link">Overview</a>
+            <li className={selectedTabCard === TabType.OVERVIEW ? `movie-nav__item movie-nav__item--active` : `movie-nav__item`}>
+              <a href="#" className="movie-nav__link"
+                onClick={(evt) => {
+                  evt.preventDefault();
+                  evt.stopPropagation();
+
+                  this.setState({
+                    selectedTabCard: TabType.OVERVIEW,
+                  });
+                }}
+              >Overview</a>
             </li>
-            <li className="movie-nav__item">
-              <a href="#" className="movie-nav__link">Details</a>
+            <li className={selectedTabCard === TabType.DETAILS ? `movie-nav__item movie-nav__item--active` : `movie-nav__item`}>
+              <a href="#" className="movie-nav__link"
+                onClick={(evt) => {
+                  evt.preventDefault();
+                  evt.stopPropagation();
+
+                  this.setState({
+                    selectedTabCard: TabType.DETAILS,
+                  });
+                }}
+              >Details</a>
             </li>
-            <li className="movie-nav__item">
-              <a href="#" className="movie-nav__link">Reviews</a>
+            <li className={selectedTabCard === TabType.REVIEWS ? `movie-nav__item movie-nav__item--active` : `movie-nav__item`}>
+              <a href="#" className="movie-nav__link"
+                onClick={(evt) => {
+                  evt.preventDefault();
+                  evt.stopPropagation();
+
+                  this.setState({
+                    selectedTabCard: TabType.REVIEWS,
+                  });
+                }}
+              >Reviews</a>
             </li>
           </ul>
         </nav>
