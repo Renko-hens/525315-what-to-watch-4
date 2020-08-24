@@ -35,8 +35,14 @@ class App extends PureComponent {
     if (selectedCardMovie !== null) {
       return (
         <CardMovieDetailted
+          movies={movies}
           movie={selectedCardMovie}
           moviesComments={moviesComments}
+          onClick={(selectedMovie) => {
+            this.setState({
+              selectedCardMovie: selectedMovie
+            });
+          }}
         />
       );
     }
@@ -59,6 +65,12 @@ class App extends PureComponent {
             <CardMovieDetailted
               movie={movies[0]}
               moviesComments={moviesComments}
+              movies={movies}
+              onClick={(selectedMovie) => {
+                this.setState({
+                  selectedCardMovie: selectedMovie
+                });
+              }}
             />
           </Route>
 

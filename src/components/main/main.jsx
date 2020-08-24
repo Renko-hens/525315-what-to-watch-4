@@ -138,6 +138,8 @@ const Main = (props) => {
           <ListMoviesWrapped
             movies={movies}
             onClick={onClick}
+            genres={`All genres`}
+            isMainList={true}
           />
 
           <div className="catalog__more">
