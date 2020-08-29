@@ -92,7 +92,7 @@ const movies = [
       alt: `Пираты карбинского моря3`,
     },
     title: `Нет страны для старого человека`,
-    genre: `Fantastic`,
+    genre: `Romance`,
     year: `1996`,
     rating: {
       score: 8.2,
@@ -240,7 +240,7 @@ const movies = [
       alt: `Пираты карбинского моря`,
     },
     title: `Пираты карбинского моря3`,
-    genre: `Fantastic`,
+    genre: `Horror`,
     year: `1996`,
     rating: {
       score: 8.2,
@@ -276,8 +276,8 @@ const movies = [
       src: `img/pirats.jpg`,
       alt: `Пираты карбинского моря`,
     },
-    title: `Пираты карбинского моря4`,
-    genre: `Fantastic`,
+    title: `Dramas4`,
+    genre: `Dramas`,
     year: `1996`,
     rating: {
       score: 8.2,
@@ -313,8 +313,8 @@ const movies = [
       src: `img/pirats.jpg`,
       alt: `Пираты карбинского моря`,
     },
-    title: `Пираты карбинского моря4`,
-    genre: `Fantastic`,
+    title: `Пираты карбинского моря214`,
+    genre: `Crime`,
     year: `1996`,
     rating: {
       score: 8.2,
@@ -344,6 +344,7 @@ const movies = [
     released: 2014,
   },
 ];
+
 
 const moviesComments = [
   // id1

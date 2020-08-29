@@ -86,8 +86,8 @@ const CardMovieDetailted = (props) => {
           <ListMoviesWrapped
             movies={movies}
             onClick={onClick}
-            genres={`All genres`}
-            isMainList={false}
+            genreType={genre}
+            numberOfCards={4}
           />
         </section>
 
@@ -128,6 +128,7 @@ CardMovieDetailted.propTypes = {
     }).isRequired,
 
   }).isRequired,
-
   moviesComments: PropTypes.array.isRequired,
+  movies: PropTypes.array.isRequired,
+  onClick: PropTypes.func.isRequired,
 };

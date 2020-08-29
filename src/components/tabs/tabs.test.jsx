@@ -1,8 +1,8 @@
 import React from "react";
 import renderer from "react-test-renderer";
-import CardMovieOverview from "./movie-page-overview.jsx";
+import Tabs from "./tabs.jsx";
 
-const movieCardDetails = {
+const movie = {
   id: 1,
   background: {
     src: `img/pirats.jpg`,
@@ -43,13 +43,51 @@ const movieCardDetails = {
   addressPage: `movie-page.html`,
 };
 
-describe(`Render Card`, () => {
-  it(`Render Snapshot Card`, () => {
+const moviesComments = [
+  // id1
+  [
+    {
+      id: 1,
+      user: {
+        id: 5,
+        name: `Kate Muir`,
+      },
+      rating: 8.9,
+      comment: `Discerning travellers and Wes Anderson fans will luxuriate in the glorious Mittel-European kitsch of one of the director's funniest and most exquisitely designed movies in years.`,
+      date: `2019-05-08T14:13:56.569Z`,
+    },
+    {
+      id: 1,
+      user: {
+        id: 5,
+        name: `Kate Muir`,
+      },
+      rating: 8.9,
+      comment: `Discerning travellers and Wes Anderson fans will luxuriate in the glorious Mittel-European kitsch of one of the director's funniest and most exquisitely designed movies in years.`,
+      date: `2019-05-08T14:13:56.569Z`,
+    },
+    {
+      id: 1,
+      user: {
+        id: 10,
+        name: `Kate Musz`,
+      },
+      rating: 8.9,
+      comment: `Discerning travellers and Wes Anderson fans will luxuriate in the glorious Mittel-European kitsch of one of the director's funniest and most exquisitely designed movies in years.`,
+      date: `2019-05-08T14:13:56.569Z`,
+    },
+  ],
+];
+
+
+describe(`Render Tabs`, () => {
+  it(`Render Snapshot Tabs`, () => {
     const tree = renderer.create(
-        <CardMovieOverview
-          movie={movieCardDetails}
+        <Tabs
+          movie = {movie}
+          moviesComments = {moviesComments}
         />
-    ).toJSON();
+    );
 
     expect(tree).toMatchSnapshot();
   });
