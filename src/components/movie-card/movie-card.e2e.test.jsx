@@ -1,7 +1,7 @@
 import React from "react";
 import Enzyme, {shallow} from "enzyme";
 import Adapter from "enzyme-adapter-react-16";
-import CardMovie from "./movie-card";
+import MovieCard from "./movie-card";
 
 Enzyme.configure({
   adapter: new Adapter(),
@@ -24,11 +24,11 @@ describe(`test component Movie Card`, () => {
     const onClick = jest.fn();
 
     const movie = shallow(
-        <CardMovie
+        <MovieCard
           movie={movieCard}
           onClick={onClick}
-          cardMovieHoverHandler={() => {}}
-          cardMovieLeaveHandler={() => {}}
+          movieCardHoverHandler={() => {}}
+          movieCardLeaveHandler={() => {}}
           isVideoActive={false}
         />
     );
@@ -48,11 +48,11 @@ describe(`test component Movie Card`, () => {
     const onHover = jest.fn();
 
     const movie = shallow(
-        <CardMovie
+        <MovieCard
           movie={movieCard}
           onClick={() => {}}
-          cardMovieHoverHandler={onHover}
-          cardMovieLeaveHandler={() => {}}
+          movieCardHoverHandler={onHover}
+          movieCardLeaveHandler={() => {}}
           isVideoActive={false}
         />
     );
@@ -67,11 +67,11 @@ describe(`test component Movie Card`, () => {
     const onLeave = jest.fn();
 
     const movie = shallow(
-        <CardMovie
+        <MovieCard
           movie={movieCard}
           onClick={() => {}}
-          cardMovieHoverHandler={() => {}}
-          cardMovieLeaveHandler={onLeave}
+          movieCardHoverHandler={() => {}}
+          movieCardLeaveHandler={onLeave}
           isVideoActive={false}
         />
     );

@@ -1,6 +1,6 @@
 import React from "react";
 import renderer from "react-test-renderer";
-import CardMovieReviews from "./movie-page-reviews.jsx";
+import MovieCardReviews from "./movie-page-reviews.jsx";
 
 const moviesComments = [
   // id1
@@ -40,8 +40,8 @@ const moviesComments = [
 describe(`Render Card`, () => {
   it(`Render Snapshot Card`, () => {
     const tree = renderer.create(
-        <CardMovieReviews
-          movieComments={moviesComments[0]}
+        <MovieCardReviews
+          movieCommentarys={moviesComments[0]}
         />
     ).toJSON();
 

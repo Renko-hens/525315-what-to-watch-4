@@ -1,11 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const CardMovieReviews = (props) => {
-  const {movieComments} = props;
+const MovieCardReviews = (props) => {
+  const {movieCommentarys} = props;
 
-  let oddReviews = movieComments.filter((review, index) => index % 2 === 0);
-  let evenReviews = movieComments.filter((review, index) => index % 2 !== 0);
+  let oddReviews = movieCommentarys.filter((review, index) => index % 2 === 0);
+  let evenReviews = movieCommentarys.filter((review, index) => index % 2 !== 0);
 
   return (
     <React.Fragment>
@@ -60,10 +60,10 @@ const CardMovieReviews = (props) => {
   );
 };
 
-export default CardMovieReviews;
+export default MovieCardReviews;
 
-CardMovieReviews.propTypes = {
-  movieComments: PropTypes.arrayOf(
+MovieCardReviews.propTypes = {
+  movieCommentarys: PropTypes.arrayOf(
       PropTypes.shape({
         comment: PropTypes.string.isRequired,
         user: PropTypes.shape({

@@ -1,6 +1,6 @@
 import React from "react";
 import renderer from "react-test-renderer";
-import CardMovieDetails from "./movie-page-details.jsx";
+import MovieCardDetails from "./movie-page-details.jsx";
 
 const movies = [
   {
@@ -50,7 +50,7 @@ const movies = [
 describe(`Render Card`, () => {
   it(`Render Snapshot Card`, () => {
     const tree = renderer.create(
-        <CardMovieDetails
+        <MovieCardDetails
           movie={movies[0]}
         />
     ).toJSON();

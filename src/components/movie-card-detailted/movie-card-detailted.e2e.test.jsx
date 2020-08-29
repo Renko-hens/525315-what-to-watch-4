@@ -1,13 +1,11 @@
 import React from "react";
 import Enzyme, {mount} from "enzyme";
 import Adapter from "enzyme-adapter-react-16";
-import CardMovieDetailted from "./movie-card-detailted.jsx";
-
+import MovieCardDetailted from "./movie-card-detailted.jsx";
 
 Enzyme.configure({
   adapter: new Adapter(),
 });
-
 
 const movies = [
   {
@@ -94,7 +92,7 @@ describe(``, () => {
     const onClick = jest.fn();
 
     const movieCardDetailted = mount(
-        <CardMovieDetailted
+        <MovieCardDetailted
           movie={movies[0]}
           moviesComments={moviesComments}
           movies={movies}

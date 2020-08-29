@@ -1,6 +1,6 @@
 import React from "react";
 import renderer from "react-test-renderer";
-import CardMovie from "./movie-card.jsx";
+import MovieCard from "./movie-card.jsx";
 
 const movieCard = {
   title: `Пираты карбинского моря`,
@@ -18,11 +18,11 @@ describe(`Render CardMovieComponent`, () => {
   it(`Show component`, () => {
 
     const tree = renderer.create(
-        <CardMovie
+        <MovieCard
           movie={movieCard}
           onClick={() => {}}
-          cardMovieHoverHandler={() => {}}
-          cardMovieLeaveHandler={() => {}}
+          movieCardHoverHandler={() => {}}
+          movieCardLeaveHandler={() => {}}
           isVideoActive={false}
         />
     ).toJSON();

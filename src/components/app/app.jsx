@@ -3,44 +3,44 @@ import Main from "../main/main.jsx";
 import PropTypes from "prop-types";
 import {BrowserRouter, Route, Switch} from "react-router-dom";
 
-import CardMovieDetailted from "../movie-card-detailted/movie-card-detailted.jsx";
+import MovieCardDetailted from "../movie-card-detailted/movie-card-detailted.jsx";
 
 class App extends PureComponent {
   constructor(props) {
     super(props);
 
     this.state = {
-      selectedCardMovie: null,
+      chosenMovieCard: null,
     };
   }
 
   _renderApp() {
     const {promo, movies, moviesComments} = this.props;
-    const {selectedCardMovie} = this.state;
+    const {chosenMovieCard} = this.state;
 
-    if (selectedCardMovie === null) {
+    if (chosenMovieCard === null) {
       return (
         <Main
           promo={promo}
           movies={movies}
-          onClick={(selectedMovie) => {
+          onClick={(selectedMovieCard) => {
             this.setState({
-              selectedCardMovie: selectedMovie
+              chosenMovieCard: selectedMovieCard
             });
           }}
         />
       );
     }
 
-    if (selectedCardMovie !== null) {
+    if (chosenMovieCard !== null) {
       return (
-        <CardMovieDetailted
+        <MovieCardDetailted
           movies={movies}
-          movie={selectedCardMovie}
+          movie={chosenMovieCard}
           moviesComments={moviesComments}
-          onClick={(selectedMovie) => {
+          onClick={(selectedMovieCard) => {
             this.setState({
-              selectedCardMovie: selectedMovie
+              chosenMovieCard: selectedMovieCard
             });
           }}
         />
@@ -62,13 +62,13 @@ class App extends PureComponent {
           </Route>
 
           <Route exact path="/movie-page-details">
-            <CardMovieDetailted
+            <MovieCardDetailted
               movie={movies[0]}
               moviesComments={moviesComments}
               movies={movies}
-              onClick={(selectedMovie) => {
+              onClick={(selectedMovieCard) => {
                 this.setState({
-                  selectedCardMovie: selectedMovie
+                  chosenMovieCard: selectedMovieCard
                 });
               }}
             />

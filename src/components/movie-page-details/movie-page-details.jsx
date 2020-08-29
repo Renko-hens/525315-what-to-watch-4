@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const CardMovieDetails = (props) => {
+const MovieCardDetails = (props) => {
   const {movie} = props;
   const {directors, starrings, runTime, genre, released} = movie;
 
@@ -40,9 +40,9 @@ const CardMovieDetails = (props) => {
   );
 };
 
-export default CardMovieDetails;
+export default MovieCardDetails;
 
-CardMovieDetails.propTypes = {
+MovieCardDetails.propTypes = {
   movie: PropTypes.shape({
     directors: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
     starrings: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,

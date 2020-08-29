@@ -479,6 +479,171 @@ const moviesComments = [
       date: `2019-05-08T14:13:56.569Z`,
     },
   ],
+  // id5
+  [
+    {
+      id: 5,
+      user: {
+        id: 5,
+        name: `Kate Muir`,
+      },
+      rating: 8.9,
+      comment: `Discerning travellers and Wes Anderson fans will luxuriate in the glorious Mittel-European kitsch of one of the director's funniest and most exquisitely designed movies in years.`,
+      date: `2019-05-08T14:13:56.569Z`,
+    },
+    {
+      id: 1,
+      user: {
+        id: 5,
+        name: `Kate Muir`,
+      },
+      rating: 8.9,
+      comment: `Discerning travellers and Wes Anderson fans will luxuriate in the glorious Mittel-European kitsch of one of the director's funniest and most exquisitely designed movies in years.`,
+      date: `2019-05-08T14:13:56.569Z`,
+    },
+    {
+      id: 1,
+      user: {
+        id: 10,
+        name: `Kate Musz`,
+      },
+      rating: 8.9,
+      comment: `Discerning travellers and Wes Anderson fans will luxuriate in the glorious Mittel-European kitsch of one of the director's funniest and most exquisitely designed movies in years.`,
+      date: `2019-05-08T14:13:56.569Z`,
+    },
+  ],
+  // id6
+  [
+    {
+      id: 6,
+      user: {
+        id: 4,
+        name: `Kate Muir2`,
+      },
+      rating: 8.9,
+      comment: `Discerning travellers and Wes Anderson fans will luxuriate in the glorious Mittel-European kitsch of one of the director's funniest and most exquisitely designed movies in years.`,
+      date: `2019-05-08T14:13:56.569Z`,
+    },
+    {
+      id: 2,
+      user: {
+        id: 4,
+        name: `Kate Muir2`,
+      },
+      rating: 8.9,
+      comment: `Discerning travellers and Wes Anderson fans will luxuriate in the glorious Mittel-European kitsch of one of the director's funniest and most exquisitely designed movies in years.`,
+      date: `2019-05-08T14:13:56.569Z`,
+    },
+    {
+      id: 2,
+      user: {
+        id: 4,
+        name: `Kate Muir2`,
+      },
+      rating: 8.9,
+      comment: `Discerning travellers and Wes Anderson fans will luxuriate in the glorious Mittel-European kitsch of one of the director's funniest and most exquisitely designed movies in years.`,
+      date: `2019-05-08T14:13:56.569Z`,
+    },
+  ],
+  // id7
+  [
+    {
+      id: 7,
+      user: {
+        id: 4,
+        name: `Kate Muir3`,
+      },
+      rating: 8.9,
+      comment: `Discerning travellers and Wes Anderson fans will luxuriate in the glorious Mittel-European kitsch of one of the director's funniest and most exquisitely designed movies in years.`,
+      date: `2019-05-08T14:13:56.569Z`,
+    },
+    {
+      id: 3,
+      user: {
+        id: 4,
+        name: `Kate Muir3`,
+      },
+      rating: 8.9,
+      comment: `Discerning travellers and Wes Anderson fans will luxuriate in the glorious Mittel-European kitsch of one of the director's funniest and most exquisitely designed movies in years.`,
+      date: `2019-05-08T14:13:56.569Z`,
+    },
+    {
+      id: 3,
+      user: {
+        id: 4,
+        name: `Kate Muir3`,
+      },
+      rating: 8.9,
+      comment: `Discerning travellers and Wes Anderson fans will luxuriate in the glorious Mittel-European kitsch of one of the director's funniest and most exquisitely designed movies in years.`,
+      date: `2019-05-08T14:13:56.569Z`,
+    },
+  ],
+  // id8
+  [
+    {
+      id: 8,
+      user: {
+        id: 4,
+        name: `Kate Muir4`,
+      },
+      rating: 8.9,
+      comment: `Discerning travellers and Wes Anderson fans will luxuriate in the glorious Mittel-European kitsch of one of the director's funniest and most exquisitely designed movies in years.`,
+      date: `2019-05-08T14:13:56.569Z`,
+    },
+    {
+      id: 4,
+      user: {
+        id: 4,
+        name: `Kate Muir4`,
+      },
+      rating: 8.9,
+      comment: `Discerning travellers and Wes Anderson fans will luxuriate in the glorious Mittel-European kitsch of one of the director's funniest and most exquisitely designed movies in years.`,
+      date: `2019-05-08T14:13:56.569Z`,
+    },
+    {
+      id: 4,
+      user: {
+        id: 4,
+        name: `Kate Muir4`,
+      },
+      rating: 8.9,
+      comment: `Discerning travellers and Wes Anderson fans will luxuriate in the glorious Mittel-European kitsch of one of the director's funniest and most exquisitely designed movies in years.`,
+      date: `2019-05-08T14:13:56.569Z`,
+    },
+  ],
+  // id9
+  [
+    {
+      id: 9,
+      user: {
+        id: 5,
+        name: `Kate Muir`,
+      },
+      rating: 8.9,
+      comment: `Discerning travellers and Wes Anderson fans will luxuriate in the glorious Mittel-European kitsch of one of the director's funniest and most exquisitely designed movies in years.`,
+      date: `2019-05-08T14:13:56.569Z`,
+    },
+    {
+      id: 1,
+      user: {
+        id: 5,
+        name: `Kate Muir`,
+      },
+      rating: 8.9,
+      comment: `Discerning travellers and Wes Anderson fans will luxuriate in the glorious Mittel-European kitsch of one of the director's funniest and most exquisitely designed movies in years.`,
+      date: `2019-05-08T14:13:56.569Z`,
+    },
+    {
+      id: 1,
+      user: {
+        id: 10,
+        name: `Kate Musz`,
+      },
+      rating: 8.9,
+      comment: `Discerning travellers and Wes Anderson fans will luxuriate in the glorious Mittel-European kitsch of one of the director's funniest and most exquisitely designed movies in years.`,
+      date: `2019-05-08T14:13:56.569Z`,
+    },
+  ],
 ];
 
 export {movies, promoMovie, moviesComments};

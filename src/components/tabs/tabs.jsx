@@ -1,9 +1,9 @@
 import React, {PureComponent} from "react";
 import PropTypes from "prop-types";
 
-import CardMovieOverview from "../movie-page-overview/movie-page-overview.jsx";
-import CardMovieDetails from "../movie-page-details/movie-page-details.jsx";
-import CardMovieReviews from "../movie-page-reviews/movie-page-reviews.jsx";
+import MovieCardOverview from "../movie-page-overview/movie-page-overview.jsx";
+import MovieCardDetails from "../movie-page-details/movie-page-details.jsx";
+import MovieCardReviews from "../movie-page-reviews/movie-page-reviews.jsx";
 
 import {TabType} from "../../const/const.js";
 
@@ -20,27 +20,27 @@ class Tabs extends PureComponent {
     const {movie, moviesComments} = this.props;
     const {selectedTabCard} = this.state;
 
-    const movieComment = moviesComments.find((movieComments) => movieComments[0] !== null && movieComments[0].id === movie.id);
+    const movieCommentarys = moviesComments.find((movieComments) => movieComments[0] !== null && movieComments[0].id === movie.id);
 
     switch (selectedTabCard) {
       case TabType.OVERVIEW:
         return (
-          <CardMovieOverview
+          <MovieCardOverview
             movie = {movie}
           />
         );
 
       case TabType.DETAILS:
         return (
-          <CardMovieDetails
+          <MovieCardDetails
             movie = {movie}
           />
         );
 
       case TabType.REVIEWS:
         return (
-          <CardMovieReviews
-            movieComments = {movieComment}
+          <MovieCardReviews
+            movieCommentarys = {movieCommentarys}
           />
         );
     }

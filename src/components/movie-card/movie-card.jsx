@@ -8,16 +8,16 @@ const VideoPlayerWithVideoStatus = withActiveVideoStatus(VideoPlayer);
 const IMAGE_WIDTH = `280`;
 const IMAGE_HEIGHT = `175`;
 
-const CardMovie = (props) => {
-  const {movie, onClick, cardMovieHoverHandler, cardMovieLeaveHandler, isVideoActive} = props;
+const MovieCard = (props) => {
+  const {movie, onClick, movieCardHoverHandler, movieCardLeaveHandler, isVideoActive} = props;
   const {title, poster, addressPage, preview} = movie;
 
   return (
     <article className="small-movie-card catalog__movies-card"
       onMouseEnter={() => {
-        cardMovieHoverHandler(movie);
+        movieCardHoverHandler(movie);
       }}
-      onMouseLeave={cardMovieLeaveHandler}
+      onMouseLeave={movieCardLeaveHandler}
       onClick={() => {
         onClick(movie);
       }}
@@ -44,7 +44,7 @@ const CardMovie = (props) => {
     </article>);
 };
 
-CardMovie.propTypes = {
+MovieCard.propTypes = {
   movie: PropTypes.shape({
     title: PropTypes.string.isRequired,
     poster: PropTypes.shape({
@@ -57,9 +57,9 @@ CardMovie.propTypes = {
     })
   }).isRequired,
   onClick: PropTypes.func.isRequired,
-  cardMovieHoverHandler: PropTypes.func.isRequired,
-  cardMovieLeaveHandler: PropTypes.func.isRequired,
+  movieCardHoverHandler: PropTypes.func.isRequired,
+  movieCardLeaveHandler: PropTypes.func.isRequired,
   isVideoActive: PropTypes.bool.isRequired,
 };
 
-export default CardMovie;
+export default MovieCard;

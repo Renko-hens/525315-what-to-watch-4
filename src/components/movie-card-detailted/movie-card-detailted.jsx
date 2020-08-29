@@ -4,7 +4,7 @@ import Tabs from "../tabs/tabs.jsx";
 import ListMovies from "../movies-list/movie-list.jsx";
 import withVideoPlayer from "../../hocs/with-video-player/with-video-player.js";
 
-const CardMovieDetailted = (props) => {
+const MovieCardDetailted = (props) => {
   const {movie, moviesComments, movies, onClick} = props;
   const {background, title, genre, year, poster} = movie;
 
@@ -109,9 +109,9 @@ const CardMovieDetailted = (props) => {
   );
 };
 
-export default CardMovieDetailted;
+export default MovieCardDetailted;
 
-CardMovieDetailted.propTypes = {
+MovieCardDetailted.propTypes = {
   movie: PropTypes.shape({
     background: PropTypes.shape({
       src: PropTypes.string.isRequired,

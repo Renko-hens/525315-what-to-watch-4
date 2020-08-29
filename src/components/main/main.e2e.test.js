@@ -7,12 +7,11 @@ Enzyme.configure({
   adapter: new Adapter(),
 });
 
-const dataPromo = {
+const dataMovie = {
   title: `The Grand Budapest Hotel`,
   genre: `Drama`,
   releaseDate: `2014`
 };
-
 
 const movies = [
   {
@@ -45,16 +44,14 @@ describe(`Test components Main`, () => {
 
     const main = mount(
         <Main
-          promo={dataPromo}
+          promo={dataMovie}
           movies={movies}
           onClick={onClick}
         />
     );
 
     const titleLink = main.find(`a.small-movie-card__link`).first();
-
     titleLink.simulate(`click`, {preventDefault() {}});
-
     expect(onClick).toHaveBeenCalledTimes(1);
   });
 });

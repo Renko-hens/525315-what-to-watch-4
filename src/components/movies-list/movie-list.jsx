@@ -6,10 +6,7 @@ import {Genres} from "../../const/const.js";
 const ListMovies = (props) => {
   const {movies, renderCard, onClick, genreType = Genres.ALL, numberOfCards = 8} = props;
 
-  const filteredMovies = movies.filter((movie) => {
-    return movie.genre === genreType;
-  });
-
+  const filteredMovies = movies.filter((movie) => movie.genre === genreType);
   const newMovies = genreType === Genres.ALL ? movies.slice(0, numberOfCards) : filteredMovies.slice(0, numberOfCards);
 
   return (

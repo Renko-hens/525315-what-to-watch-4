@@ -1,5 +1,5 @@
 import React, {PureComponent} from "react";
-import CardMovie from "../../components/movie-card/movie-card.jsx";
+import MovieCard from "../../components/movie-card/movie-card.jsx";
 
 const VIDEO_DELAY_MSECONDS = 1000;
 
@@ -42,13 +42,13 @@ const withVideoPlayer = (Component) => {
 
         renderCard = {(movie, onClick, index) => {
           return (
-            <CardMovie
+            <MovieCard
               key={`${movie.title}-${index}`}
               movie={movie}
-              cardMovieHoverHandler={(activeMovieCard) => {
+              movieCardHoverHandler={(activeMovieCard) => {
                 this._setTimeOutActiveCard(activeMovieCard);
               }}
-              cardMovieLeaveHandler={() => {
+              movieCardLeaveHandler={() => {
                 this._clearTimeOutActiveCard();
               }}
               onClick={onClick}

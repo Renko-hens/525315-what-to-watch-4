@@ -2,7 +2,7 @@ import React from "react";
 import renderer from "react-test-renderer";
 import App from "./app.jsx";
 
-const dataPromo = {
+const promoMovie = {
   title: `The Grand Budapest Hotel`,
   genre: `Drama`,
   releaseDate: `2014`
@@ -91,7 +91,7 @@ describe(`Renders app components`, () => {
   it(`Render App component`, () => {
     const tree = renderer.create(
         <App
-          promo = {dataPromo}
+          promo = {promoMovie}
           movies = {movies}
           moviesComments = {moviesComments}
           onClick = {() => {}}

@@ -33,7 +33,7 @@ const checkRatingScore = (score) => {
   return level;
 };
 
-const CardMovieOverview = (props) => {
+const MovieCardOverview = (props) => {
   const {movie} = props;
   const {rating, descriptions, directors, starrings} = movie;
 
@@ -77,9 +77,9 @@ const CardMovieOverview = (props) => {
   );
 };
 
-export default CardMovieOverview;
+export default MovieCardOverview;
 
-CardMovieOverview.propTypes = {
+MovieCardOverview.propTypes = {
   movie: PropTypes.shape({
     rating: PropTypes.shape({
       score: PropTypes.number.isRequired,

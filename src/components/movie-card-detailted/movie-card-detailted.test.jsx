@@ -1,6 +1,6 @@
 import React from "react";
 import renderer from "react-test-renderer";
-import CardMovieDetailted from "./movie-card-detailted.jsx";
+import MovieCardDetailted from "./movie-card-detailted.jsx";
 
 const movies = [
   {
@@ -84,7 +84,7 @@ const moviesComments = [
 describe(``, () => {
   it(``, () => {
     const tree = renderer.create(
-        <CardMovieDetailted
+        <MovieCardDetailted
           movie={movies[0]}
           moviesComments={moviesComments}
           movies={movies}
