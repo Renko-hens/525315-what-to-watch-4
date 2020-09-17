@@ -21,8 +21,8 @@ describe(`Render CardMovieComponent`, () => {
         <MovieCard
           movie={movieCard}
           onClick={() => {}}
-          movieCardHoverHandler={() => {}}
-          movieCardLeaveHandler={() => {}}
+          onMouseEnter={() => {}}
+          onMouseLeave={() => {}}
           isVideoActive={false}
         />
     ).toJSON();

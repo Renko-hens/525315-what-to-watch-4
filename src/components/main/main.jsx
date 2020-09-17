@@ -3,10 +3,10 @@ import PropTypes from "prop-types";
 import ListMovies from "../movies-list/movie-list.jsx";
 import withVideoPlayer from "../../hocs/with-video-player/with-video-player.js";
 
+const ListMoviesWrapped = withVideoPlayer(ListMovies);
+
 const Main = (props) => {
   const {promo, movies, onClick} = props;
-
-  const ListMoviesWrapped = withVideoPlayer(ListMovies);
 
   return (
     <React.Fragment>

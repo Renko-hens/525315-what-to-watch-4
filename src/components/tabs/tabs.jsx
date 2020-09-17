@@ -14,6 +14,17 @@ class Tabs extends PureComponent {
     this.state = {
       selectedTabCard: TabType.OVERVIEW,
     };
+
+    this._tabsLinkClickHandler = this._tabsLinkClickHandler.bind(this);
+  }
+
+  _tabsLinkClickHandler(evt, tabType) {
+    evt.preventDefault();
+    evt.stopPropagation();
+
+    this.setState({
+      selectedTabCard: tabType,
+    });
   }
 
   _renderDetailtedInformationTab() {
@@ -43,9 +54,10 @@ class Tabs extends PureComponent {
             movieCommentarys = {movieCommentarys}
           />
         );
-    }
 
-    return null;
+      default:
+        return null;
+    }
   }
 
   render() {
@@ -55,39 +67,24 @@ class Tabs extends PureComponent {
       <React.Fragment>
         <nav className="movie-nav movie-card__nav">
           <ul className="movie-nav__list">
-            <li className={selectedTabCard === TabType.OVERVIEW ? `movie-nav__item movie-nav__item--active` : `movie-nav__item`}>
+            <li className={`movie-nav__item ${selectedTabCard === TabType.OVERVIEW ? `movie-nav__item--active` : ``}`}>
               <a href="#" className="movie-nav__link"
                 onClick={(evt) => {
-                  evt.preventDefault();
-                  evt.stopPropagation();
-
-                  this.setState({
-                    selectedTabCard: TabType.OVERVIEW,
-                  });
+                  this._tabsLinkClickHandler(evt, TabType.OVERVIEW);
                 }}
               >Overview</a>
             </li>
-            <li className={selectedTabCard === TabType.DETAILS ? `movie-nav__item movie-nav__item--active` : `movie-nav__item`}>
+            <li className={`movie-nav__item ${selectedTabCard === TabType.DETAILS ? `movie-nav__item--active` : ``}`}>
               <a href="#" className="movie-nav__link"
                 onClick={(evt) => {
-                  evt.preventDefault();
-                  evt.stopPropagation();
-
-                  this.setState({
-                    selectedTabCard: TabType.DETAILS,
-                  });
+                  this._tabsLinkClickHandler(evt, TabType.DETAILS);
                 }}
               >Details</a>
             </li>
-            <li className={selectedTabCard === TabType.REVIEWS ? `movie-nav__item movie-nav__item--active` : `movie-nav__item`}>
+            <li className={`movie-nav__item ${selectedTabCard === TabType.REVIEWS ? `movie-nav__item--active` : ``}`}>
               <a href="#" className="movie-nav__link"
                 onClick={(evt) => {
-                  evt.preventDefault();
-                  evt.stopPropagation();
-
-                  this.setState({
-                    selectedTabCard: TabType.REVIEWS,
-                  });
+                  this._tabsLinkClickHandler(evt, TabType.REVIEWS);
                 }}
               >Reviews</a>
             </li>

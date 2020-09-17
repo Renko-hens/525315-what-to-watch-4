@@ -27,8 +27,8 @@ describe(`test component Movie Card`, () => {
         <MovieCard
           movie={movieCard}
           onClick={onClick}
-          movieCardHoverHandler={() => {}}
-          movieCardLeaveHandler={() => {}}
+          onMouseEnter={() => {}}
+          onMouseLeave={() => {}}
           isVideoActive={false}
         />
     );
@@ -51,8 +51,8 @@ describe(`test component Movie Card`, () => {
         <MovieCard
           movie={movieCard}
           onClick={() => {}}
-          movieCardHoverHandler={onHover}
-          movieCardLeaveHandler={() => {}}
+          onMouseEnter={onHover}
+          onMouseLeave={() => {}}
           isVideoActive={false}
         />
     );
@@ -70,8 +70,8 @@ describe(`test component Movie Card`, () => {
         <MovieCard
           movie={movieCard}
           onClick={() => {}}
-          movieCardHoverHandler={() => {}}
-          movieCardLeaveHandler={onLeave}
+          onMouseEnter={() => {}}
+          onMouseLeave={onLeave}
           isVideoActive={false}
         />
     );

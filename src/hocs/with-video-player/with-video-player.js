@@ -13,6 +13,9 @@ const withVideoPlayer = (Component) => {
       };
 
       this.timeOutCard = null;
+
+      this._setTimeOutActiveCard = this._setTimeOutActiveCard.bind(this);
+      this._clearTimeOutActiveCard = this._clearTimeOutActiveCard.bind(this);
     }
 
     _setTimeOutActiveCard(movie) {
@@ -45,12 +48,8 @@ const withVideoPlayer = (Component) => {
             <MovieCard
               key={`${movie.title}-${index}`}
               movie={movie}
-              movieCardHoverHandler={(activeMovieCard) => {
-                this._setTimeOutActiveCard(activeMovieCard);
-              }}
-              movieCardLeaveHandler={() => {
-                this._clearTimeOutActiveCard();
-              }}
+              onMouseEnter={this._setTimeOutActiveCard}
+              onMouseLeave={this._clearTimeOutActiveCard}
               onClick={onClick}
               isVideoActive={this.state.activeMovieCard !== null && movie.id === this.state.activeMovieCard.id}
             />

@@ -101,9 +101,7 @@ describe(``, () => {
     );
 
     const titleLink = movieCardDetailted.find(`a.small-movie-card__link`).first();
-
     titleLink.simulate(`click`, {preventDefault() {}});
-
     expect(onClick).toHaveBeenCalledTimes(1);
   });
 });

@@ -71,8 +71,8 @@ const MovieCardDetailted = (props) => {
 
             <div className="movie-card__desc">
               <Tabs
-                movie = {movie}
-                moviesComments = {moviesComments}
+                movie={movie}
+                moviesComments={moviesComments}
               />
             </div>
           </div>

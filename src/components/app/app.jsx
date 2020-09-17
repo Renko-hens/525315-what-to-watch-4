@@ -12,6 +12,14 @@ class App extends PureComponent {
     this.state = {
       chosenMovieCard: null,
     };
+
+    this._selectMovieCardClickHandler = this._selectMovieCardClickHandler.bind(this);
+  }
+
+  _selectMovieCardClickHandler(selectedMovieCard) {
+    this.setState({
+      chosenMovieCard: selectedMovieCard,
+    });
   }
 
   _renderApp() {
@@ -23,11 +31,7 @@ class App extends PureComponent {
         <Main
           promo={promo}
           movies={movies}
-          onClick={(selectedMovieCard) => {
-            this.setState({
-              chosenMovieCard: selectedMovieCard
-            });
-          }}
+          onClick={this._selectMovieCardClickHandler}
         />
       );
     }
@@ -38,11 +42,7 @@ class App extends PureComponent {
           movies={movies}
           movie={chosenMovieCard}
           moviesComments={moviesComments}
-          onClick={(selectedMovieCard) => {
-            this.setState({
-              chosenMovieCard: selectedMovieCard
-            });
-          }}
+          onClick={this._selectMovieCardClickHandler}
         />
       );
     }
@@ -66,11 +66,7 @@ class App extends PureComponent {
               movie={movies[0]}
               moviesComments={moviesComments}
               movies={movies}
-              onClick={(selectedMovieCard) => {
-                this.setState({
-                  chosenMovieCard: selectedMovieCard
-                });
-              }}
+              onClick={this._selectMovieCardClickHandler}
             />
           </Route>
 
