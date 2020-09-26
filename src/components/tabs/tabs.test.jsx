@@ -21,11 +21,6 @@ const movie = {
   ],
   directors: [
     `Sas`,
-    `Kek`,
-    `Sas`,
-    `Kek`,
-    `Sas`,
-    `Kek`
   ],
   starrings: [
     `Bill Murray`,
@@ -41,6 +36,8 @@ const movie = {
     src: `http://techslides.com/demos/sample-videos/small.webm`,
   },
   addressPage: `movie-page.html`,
+  runTime: 109,
+  released: 2014,
 };
 
 const moviesComments = [

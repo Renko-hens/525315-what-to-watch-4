@@ -1,6 +1,25 @@
 import React from "react";
 import PropTypes from "prop-types";
 
+const formatRunTime = (runTime) => {
+  const MINUTES_FORMAT = 60;
+  const hours = Math.floor(runTime / MINUTES_FORMAT);
+  const minutes = (runTime - (hours * MINUTES_FORMAT));
+
+  // return hours > 0 && minutes !== 0 ? `${hours}h ${minutes}m` : minutes === 0 ? `${hours}h` : `${minutes}m`;
+
+  switch (true) {
+    case hours > 0 && minutes !== 0:
+      return `${hours}h ${minutes}m`;
+
+    case minutes === 0:
+      return `${hours}h`;
+
+    default:
+      return `${minutes}m`;
+  }
+};
+
 const MovieCardDetails = (props) => {
   const {movie} = props;
   const {directors, starrings, runTime, genre, released} = movie;
@@ -24,7 +43,7 @@ const MovieCardDetails = (props) => {
         <div className="movie-card__text-col">
           <p className="movie-card__details-item">
             <strong className="movie-card__details-name">Run Time</strong>
-            <span className="movie-card__details-value">{runTime}</span>
+            <span className="movie-card__details-value">{formatRunTime(runTime)}</span>
           </p>
           <p className="movie-card__details-item">
             <strong className="movie-card__details-name">Genre</strong>

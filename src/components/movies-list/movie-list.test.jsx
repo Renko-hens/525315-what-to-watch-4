@@ -33,7 +33,7 @@ describe(`Render ListCards Components`, () => {
         <ListMovies
           movies={movies}
           renderCard={() => {}}
-          onClick={() => {}}
+          onSelectMovieCardClick={() => {}}
         />
     ).toJSON();
 

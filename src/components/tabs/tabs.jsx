@@ -1,9 +1,9 @@
 import React, {PureComponent} from "react";
 import PropTypes from "prop-types";
 
-import MovieCardOverview from "../movie-page-overview/movie-page-overview.jsx";
-import MovieCardDetails from "../movie-page-details/movie-page-details.jsx";
-import MovieCardReviews from "../movie-page-reviews/movie-page-reviews.jsx";
+import MovieCardOverview from "../movie-card-overview/movie-card-overview.jsx";
+import MovieCardDetails from "../movie-card-details/movie-card-details.jsx";
+import MovieCardReviews from "../movie-card-reviews/movie-card-reviews.jsx";
 
 import {TabType} from "../../const/const.js";
 
@@ -15,10 +15,10 @@ class Tabs extends PureComponent {
       selectedTabCard: TabType.OVERVIEW,
     };
 
-    this._tabsLinkClickHandler = this._tabsLinkClickHandler.bind(this);
+    this._handleTabLinkClick = this._handleTabLinkClick.bind(this);
   }
 
-  _tabsLinkClickHandler(evt, tabType) {
+  _handleTabLinkClick(evt, tabType) {
     evt.preventDefault();
     evt.stopPropagation();
 
@@ -70,21 +70,21 @@ class Tabs extends PureComponent {
             <li className={`movie-nav__item ${selectedTabCard === TabType.OVERVIEW ? `movie-nav__item--active` : ``}`}>
               <a href="#" className="movie-nav__link"
                 onClick={(evt) => {
-                  this._tabsLinkClickHandler(evt, TabType.OVERVIEW);
+                  this._handleTabLinkClick(evt, TabType.OVERVIEW);
                 }}
               >Overview</a>
             </li>
             <li className={`movie-nav__item ${selectedTabCard === TabType.DETAILS ? `movie-nav__item--active` : ``}`}>
               <a href="#" className="movie-nav__link"
                 onClick={(evt) => {
-                  this._tabsLinkClickHandler(evt, TabType.DETAILS);
+                  this._handleTabLinkClick(evt, TabType.DETAILS);
                 }}
               >Details</a>
             </li>
             <li className={`movie-nav__item ${selectedTabCard === TabType.REVIEWS ? `movie-nav__item--active` : ``}`}>
               <a href="#" className="movie-nav__link"
                 onClick={(evt) => {
-                  this._tabsLinkClickHandler(evt, TabType.REVIEWS);
+                  this._handleTabLinkClick(evt, TabType.REVIEWS);
                 }}
               >Reviews</a>
             </li>

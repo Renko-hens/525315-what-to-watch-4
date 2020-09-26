@@ -40,18 +40,18 @@ const movies = [
 
 describe(`Test components Main`, () => {
   it(`Should titleMovie Main pressed`, () => {
-    const onClick = jest.fn();
+    const onSelectMovieCardClick = jest.fn();
 
     const main = mount(
         <Main
           promo={dataMovie}
           movies={movies}
-          onClick={onClick}
+          onSelectMovieCardClick={onSelectMovieCardClick}
         />
     );
 
     const titleLink = main.find(`a.small-movie-card__link`).first();
     titleLink.simulate(`click`, {preventDefault() {}});
-    expect(onClick).toHaveBeenCalledTimes(1);
+    expect(onSelectMovieCardClick).toHaveBeenCalledTimes(1);
   });
 });

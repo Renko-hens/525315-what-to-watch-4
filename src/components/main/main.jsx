@@ -6,7 +6,7 @@ import withVideoPlayer from "../../hocs/with-video-player/with-video-player.js";
 const ListMoviesWrapped = withVideoPlayer(ListMovies);
 
 const Main = (props) => {
-  const {promo, movies, onClick} = props;
+  const {promo, movies, onSelectMovieCardClick} = props;
 
   return (
     <React.Fragment>
@@ -137,7 +137,7 @@ const Main = (props) => {
 
           <ListMoviesWrapped
             movies={movies}
-            onClick={onClick}
+            onSelectMovieCardClick={onSelectMovieCardClick}
           />
 
           <div className="catalog__more">
@@ -170,7 +170,7 @@ Main.propTypes = {
     releaseDate: PropTypes.string.isRequired,
   }).isRequired,
   movies: PropTypes.array.isRequired,
-  onClick: PropTypes.func.isRequired,
+  onSelectMovieCardClick: PropTypes.func.isRequired,
 };
 
 

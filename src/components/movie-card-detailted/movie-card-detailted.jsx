@@ -5,7 +5,7 @@ import ListMovies from "../movies-list/movie-list.jsx";
 import withVideoPlayer from "../../hocs/with-video-player/with-video-player.js";
 
 const MovieCardDetailted = (props) => {
-  const {movie, moviesComments, movies, onClick} = props;
+  const {movie, moviesComments, movies, onSelectMovieCardClick} = props;
   const {background, title, genre, year, poster} = movie;
 
   const ListMoviesWrapped = withVideoPlayer(ListMovies);
@@ -85,7 +85,7 @@ const MovieCardDetailted = (props) => {
 
           <ListMoviesWrapped
             movies={movies}
-            onClick={onClick}
+            onSelectMovieCardClick={onSelectMovieCardClick}
             genreType={genre}
             numberOfCards={4}
           />
@@ -130,5 +130,5 @@ MovieCardDetailted.propTypes = {
   }).isRequired,
   moviesComments: PropTypes.array.isRequired,
   movies: PropTypes.array.isRequired,
-  onClick: PropTypes.func.isRequired,
+  onSelectMovieCardClick: PropTypes.func.isRequired,
 };

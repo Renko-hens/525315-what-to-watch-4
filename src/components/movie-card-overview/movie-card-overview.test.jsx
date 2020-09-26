@@ -1,6 +1,6 @@
 import React from "react";
 import renderer from "react-test-renderer";
-import CardMovieOverview from "./movie-page-overview.jsx";
+import CardMovieOverview from "./movie-card-overview.jsx";
 
 const movieCardDetails = {
   id: 1,

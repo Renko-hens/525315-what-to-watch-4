@@ -9,18 +9,18 @@ const IMAGE_WIDTH = `280`;
 const IMAGE_HEIGHT = `175`;
 
 const MovieCard = (props) => {
-  const {movie, onClick, onMouseEnter, onMouseLeave, isVideoActive} = props;
+  const {movie, onSelectMovieCardClick, onActiveCardMouseEnter, onActiveCardMouseLeave, isVideoActive} = props;
   const {title, poster, addressPage, preview} = movie;
 
   return (
     <article className="small-movie-card catalog__movies-card"
       onClick={() => {
-        onClick(movie);
+        onSelectMovieCardClick(movie);
       }}
       onMouseEnter={() => {
-        onMouseEnter(movie);
+        onActiveCardMouseEnter(movie);
       }}
-      onMouseLeave={onMouseLeave}
+      onMouseLeave={onActiveCardMouseLeave}
     >
       <div className="small-movie-card__image">
         {
@@ -36,7 +36,7 @@ const MovieCard = (props) => {
           onClick={(evt) => {
             evt.preventDefault();
             evt.stopPropagation();
-            onClick(movie);
+            onSelectMovieCardClick(movie);
           }}>
           {title}
         </a>
@@ -56,9 +56,9 @@ MovieCard.propTypes = {
       src: PropTypes.string.isRequired,
     })
   }).isRequired,
-  onClick: PropTypes.func.isRequired,
-  onMouseEnter: PropTypes.func.isRequired,
-  onMouseLeave: PropTypes.func.isRequired,
+  onSelectMovieCardClick: PropTypes.func.isRequired,
+  onActiveCardMouseEnter: PropTypes.func.isRequired,
+  onActiveCardMouseLeave: PropTypes.func.isRequired,
   isVideoActive: PropTypes.bool.isRequired,
 };
 

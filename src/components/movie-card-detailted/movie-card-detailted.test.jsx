@@ -88,7 +88,7 @@ describe(``, () => {
           movie={movies[0]}
           moviesComments={moviesComments}
           movies={movies}
-          onClick={() => {}}
+          onSelectMovieCardClick={() => {}}
         />
     );
 

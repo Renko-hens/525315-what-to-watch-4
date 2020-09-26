@@ -21,6 +21,7 @@ const movies = [
       score: 9.9,
       count: 10,
     },
+    runTime: 99,
     descriptions: [
       `In the 1970s, the Grand Budapest Hotel is a popular European ski resort, presided over by concierge Gustave H. (Ralph Fiennes). Zero, a junior lobby boy, becomes Gustave's friend and protege.`,
       `Gustave prides himself on providing first-className service to the hotel's guests, including satisfying the sexual needs of the many elderly women who stay there. When one of Gustave's lovers dies mysteriously, Gustave finds himself the recipient of a priceless painting and the chief suspect in her murder.`
@@ -89,19 +90,19 @@ const moviesComments = [
 
 describe(``, () => {
   it(``, () => {
-    const onClick = jest.fn();
+    const onSelectMovieCardClick = jest.fn();
 
     const movieCardDetailted = mount(
         <MovieCardDetailted
           movie={movies[0]}
           moviesComments={moviesComments}
           movies={movies}
-          onClick={onClick}
+          onSelectMovieCardClick={onSelectMovieCardClick}
         />
     );
 
     const titleLink = movieCardDetailted.find(`a.small-movie-card__link`).first();
     titleLink.simulate(`click`, {preventDefault() {}});
-    expect(onClick).toHaveBeenCalledTimes(1);
+    expect(onSelectMovieCardClick).toHaveBeenCalledTimes(1);
   });
 });

@@ -14,11 +14,11 @@ const withVideoPlayer = (Component) => {
 
       this.timeOutCard = null;
 
-      this._setTimeOutActiveCard = this._setTimeOutActiveCard.bind(this);
-      this._clearTimeOutActiveCard = this._clearTimeOutActiveCard.bind(this);
+      this._handleEnterActiveCard = this._handleEnterActiveCard.bind(this);
+      this._handleLeaveActiveCard = this._handleLeaveActiveCard.bind(this);
     }
 
-    _setTimeOutActiveCard(movie) {
+    _handleEnterActiveCard(movie) {
       this.timeOutCard = setTimeout(() => {
         this.setState({
           activeMovieCard: movie
@@ -26,31 +26,31 @@ const withVideoPlayer = (Component) => {
       }, VIDEO_DELAY_MSECONDS);
     }
 
-    _clearTimeOutActiveCard() {
-      this.setState(() => ({
+    _handleLeaveActiveCard() {
+      this.setState({
         activeMovieCard: null,
-      }));
+      });
 
       clearTimeout(this.timeOutCard);
     }
 
     // Удаляет и очищает таймаут для запуска видео после клика на карточку с фильмом
     componentWillUnmount() {
-      this._clearTimeOutActiveCard();
+      this._handleLeaveActiveCard();
     }
 
     render() {
       return <Component
         {...this.props}
 
-        renderCard = {(movie, onClick, index) => {
+        renderCard = {(movie, onSelectMovieCardClick, index) => {
           return (
             <MovieCard
               key={`${movie.title}-${index}`}
               movie={movie}
-              onMouseEnter={this._setTimeOutActiveCard}
-              onMouseLeave={this._clearTimeOutActiveCard}
-              onClick={onClick}
+              onActiveCardMouseEnter={this._handleEnterActiveCard}
+              onActiveCardMouseLeave={this._handleLeaveActiveCard}
+              onSelectMovieCardClick={onSelectMovieCardClick}
               isVideoActive={this.state.activeMovieCard !== null && movie.id === this.state.activeMovieCard.id}
             />
           );

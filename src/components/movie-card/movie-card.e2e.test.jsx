@@ -21,14 +21,14 @@ const movieCard = {
 
 describe(`test component Movie Card`, () => {
   it(`Should active Movie card`, () => {
-    const onClick = jest.fn();
+    const onSelectMovieCardClick = jest.fn();
 
     const movie = shallow(
         <MovieCard
           movie={movieCard}
-          onClick={onClick}
-          onMouseEnter={() => {}}
-          onMouseLeave={() => {}}
+          onSelectMovieCardClick={onSelectMovieCardClick}
+          onActiveCardMouseEnter={() => {}}
+          onActiveCardMouseLeave={() => {}}
           isVideoActive={false}
         />
     );
@@ -41,37 +41,37 @@ describe(`test component Movie Card`, () => {
       },
     });
 
-    expect(onClick).toHaveBeenCalledTimes(1);
+    expect(onSelectMovieCardClick).toHaveBeenCalledTimes(1);
   });
 
   it(`Should card be mouseentered`, () => {
-    const onHover = jest.fn();
+    const onActiveCardMouseEnter = jest.fn();
 
     const movie = shallow(
         <MovieCard
           movie={movieCard}
-          onClick={() => {}}
-          onMouseEnter={onHover}
-          onMouseLeave={() => {}}
+          onSelectMovieCardClick={() => {}}
+          onActiveCardMouseEnter={onActiveCardMouseEnter}
+          onActiveCardMouseLeave={() => {}}
           isVideoActive={false}
         />
     );
 
     movie.simulate(`mouseenter`, {preventDefault() {}});
 
-    expect(onHover).toHaveBeenCalledTimes(1);
-    expect(onHover.mock.calls[0][0]).toMatchObject(movie);
+    expect(onActiveCardMouseEnter).toHaveBeenCalledTimes(1);
+    expect(onActiveCardMouseEnter.mock.calls[0][0]).toMatchObject(movie);
   });
 
   it(`Should card be mouseleaved`, () => {
-    const onLeave = jest.fn();
+    const onActiveCardMouseLeave = jest.fn();
 
     const movie = shallow(
         <MovieCard
           movie={movieCard}
-          onClick={() => {}}
-          onMouseEnter={() => {}}
-          onMouseLeave={onLeave}
+          onSelectMovieCardClick={() => {}}
+          onActiveCardMouseEnter={() => {}}
+          onActiveCardMouseLeave={onActiveCardMouseLeave}
           isVideoActive={false}
         />
     );
@@ -79,7 +79,7 @@ describe(`test component Movie Card`, () => {
     const movieDiv = movie.find(`.small-movie-card`);
     movieDiv.simulate(`mouseleave`);
 
-    expect(onLeave).toHaveBeenCalledTimes(1);
+    expect(onActiveCardMouseLeave).toHaveBeenCalledTimes(1);
   });
 });
 

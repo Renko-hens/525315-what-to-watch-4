@@ -1,6 +1,6 @@
 import React from "react";
 import renderer from "react-test-renderer";
-import MovieCardDetails from "./movie-page-details.jsx";
+import MovieCardDetails from "./movie-card-details.jsx";
 
 const movies = [
   {
@@ -42,7 +42,7 @@ const movies = [
       src: `http://techslides.com/demos/sample-videos/small.webm`,
     },
     addressPage: `movie-page.html`,
-    runTime: 99,
+    runTime: 109,
     released: 2014,
   },
 ];

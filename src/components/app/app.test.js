@@ -94,7 +94,6 @@ describe(`Renders app components`, () => {
           promo = {promoMovie}
           movies = {movies}
           moviesComments = {moviesComments}
-          onClick = {() => {}}
         />
     ).toJSON();
 

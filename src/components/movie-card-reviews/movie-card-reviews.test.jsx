@@ -1,6 +1,6 @@
 import React from "react";
 import renderer from "react-test-renderer";
-import MovieCardReviews from "./movie-page-reviews.jsx";
+import MovieCardReviews from "./movie-card-reviews.jsx";
 
 const moviesComments = [
   // id1

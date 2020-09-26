@@ -20,9 +20,9 @@ describe(`Render CardMovieComponent`, () => {
     const tree = renderer.create(
         <MovieCard
           movie={movieCard}
-          onClick={() => {}}
-          onMouseEnter={() => {}}
-          onMouseLeave={() => {}}
+          onSelectMovieCardClick={() => {}}
+          onActiveCardMouseEnter={() => {}}
+          onActiveCardMouseLeave={() => {}}
           isVideoActive={false}
         />
     ).toJSON();

@@ -24,11 +24,6 @@ const movies = [
     ],
     directors: [
       `Sas`,
-      `Kek`,
-      `Sas`,
-      `Kek`,
-      `Sas`,
-      `Kek`
     ],
     starrings: [
       `Bill Murray`,
@@ -44,7 +39,7 @@ const movies = [
       src: `http://techslides.com/demos/sample-videos/small.webm`,
     },
     addressPage: `movie-page.html`,
-    runTime: 99,
+    runTime: 6420,
     released: 2014,
   },
 
@@ -155,7 +150,7 @@ const movies = [
       src: `https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4`,
     },
     addressPage: `movie-page-in-list.html`,
-    runTime: 99,
+    runTime: 56,
     released: 2014,
   },
 

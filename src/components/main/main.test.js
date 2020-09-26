@@ -40,7 +40,7 @@ describe(`Renders Main components`, () => {
         <Main
           promo={dataMovie}
           movies={movies}
-          onClick={() => {}}
+          onSelectMovieCardClick={() => {}}
         />
     ).toJSON;
 
