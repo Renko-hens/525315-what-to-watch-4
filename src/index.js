@@ -1,20 +1,15 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import App from "./components/app/app.jsx";
+import {movies, promoMovie, moviesComments} from "./mocks/films.js";
 
 const init = () => {
-  const dataPromo = {
-    title: `The Grand Budapest Hotel`,
-    genre: `Drama`,
-    releaseDate: `2014`
-  };
-
-  const titleMovies = [`Fantastic Beasts`, `Bohemian Rhapsody`, `Macbeth`, `Fantastic Beasts`, `Bohemian Rhapsody`, `Macbeth`, `Fantastic Beasts`, `Bohemian Rhapsody`, `Macbeth`];
 
   ReactDOM.render(
       <App
-        promo = {dataPromo}
-        titleMovies = {titleMovies}
+        promo = {promoMovie}
+        movies = {movies}
+        moviesComments = {moviesComments}
       />,
       document.querySelector(`#root`));
 };

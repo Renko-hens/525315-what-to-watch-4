@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render CardMovieComponent Show component 1`] = `
+<article
+  className="small-movie-card catalog__movies-card"
+  onClick={[Function]}
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
+>
+  <div
+    className="small-movie-card__image"
+  >
+    <img
+      alt="Пираты карбинского моря"
+      height="175"
+      src="img/johnny-english.jpg"
+      width="280"
+    />
+  </div>
+  <h3
+    className="small-movie-card__title"
+  >
+    <a
+      className="small-movie-card__link"
+      href="movie-page.html"
+      onClick={[Function]}
+    >
+      Пираты карбинского моря
+    </a>
+  </h3>
+</article>
+`;
