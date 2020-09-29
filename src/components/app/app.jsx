@@ -1,6 +1,7 @@
 import React, {PureComponent} from "react";
 import Main from "../main/main.jsx";
 import PropTypes from "prop-types";
+import {connect} from "react-redux";
 import {BrowserRouter, Route, Switch} from "react-router-dom";
 
 import MovieCardDetailted from "../movie-card-detailted/movie-card-detailted.jsx";
@@ -86,4 +87,10 @@ App.propTypes = {
   moviesComments: PropTypes.array.isRequired,
 };
 
-export default App;
+const mapStateToProps = (state) => ({
+  movies: state.movies,
+});
+
+export {App};
+export default connect(mapStateToProps)(App);
+
