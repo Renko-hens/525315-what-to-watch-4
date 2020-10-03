@@ -12,7 +12,7 @@ const movies = [
       alt: `Пираты карбинского моря`,
     },
     title: `Пираты карбинского моря`,
-    genre: `Fantastic`,
+    genre: `Documentary`,
     year: `1996`,
     rating: {
       score: 9.9,
@@ -50,7 +50,7 @@ const movies = [
       alt: `Пираты карбинского моря2`,
     },
     title: `Преступление Гринлевальда`,
-    genre: `Fantastic`,
+    genre: `Horror`,
     year: `1996`,
     rating: {
       score: 8.2,
@@ -124,7 +124,7 @@ const movies = [
       alt: `Пираты карбинского моря4`,
     },
     title: `Отель Гранд Будапешт`,
-    genre: `Fantastic`,
+    genre: `Thrillers`,
     year: `1996`,
     rating: {
       score: 8.2,
@@ -161,7 +161,7 @@ const movies = [
       alt: `Пираты карбинского моря: Насраных берега`,
     },
     title: `Нам надо поговорить о Кевине`,
-    genre: `Fantastic`,
+    genre: `Comedies`,
     year: `1996`,
     rating: {
       score: 8.2,
@@ -198,7 +198,7 @@ const movies = [
       alt: `Пираты карбинского моря`,
     },
     title: `Пираты карбинского моря2`,
-    genre: `Fantastic`,
+    genre: `Dramas`,
     year: `1996`,
     rating: {
       score: 8.2,
@@ -338,7 +338,156 @@ const movies = [
     runTime: 99,
     released: 2014,
   },
+
+  {
+    id: 10,
+    background: {
+      src: `img/pirats.jpg`,
+      alt: `Пираты карбинского моря`,
+    },
+    title: `Пираты карбинского моря214`,
+    genre: `Kids & Family`,
+    year: `1996`,
+    rating: {
+      score: 8.2,
+      count: 240,
+    },
+    descriptions: [
+      `In the 1930s, the Grand Budapest Hotel is a popular European ski resort, presided over by concierge Gustave H. (Ralph Fiennes). Zero, a junior lobby boy, becomes Gustave's friend and protege.`,
+      `Gustave prides himself on providing first-className service to the hotel's guests, including satisfying the sexual needs of the many elderly women who stay there. When one of Gustave's lovers dies mysteriously, Gustave finds himself the recipient of a priceless painting and the chief suspect in her murder.`
+    ],
+    directors: [
+      `Sas`,
+      `Kek`
+    ],
+    starrings: [
+      `John Wick`,
+      `John Dutton`
+    ],
+    poster: {
+      src: `img/fantastic-beasts-the-crimes-of-grindelwald.jpg`,
+      alt: `Пираты карбинского моря`,
+    },
+    preview: {
+      src: `https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4`,
+    },
+    addressPage: `movie-page-in-list.html`,
+    runTime: 99,
+    released: 2014,
+  },
+
+  {
+    id: 11,
+    background: {
+      src: `img/pirats.jpg`,
+      alt: `Пираты карбинского моря`,
+    },
+    title: `Пираты карбинского моря214`,
+    genre: `Horror`,
+    year: `1996`,
+    rating: {
+      score: 8.2,
+      count: 240,
+    },
+    descriptions: [
+      `In the 1930s, the Grand Budapest Hotel is a popular European ski resort, presided over by concierge Gustave H. (Ralph Fiennes). Zero, a junior lobby boy, becomes Gustave's friend and protege.`,
+      `Gustave prides himself on providing first-className service to the hotel's guests, including satisfying the sexual needs of the many elderly women who stay there. When one of Gustave's lovers dies mysteriously, Gustave finds himself the recipient of a priceless painting and the chief suspect in her murder.`
+    ],
+    directors: [
+      `Sas`,
+      `Kek`
+    ],
+    starrings: [
+      `John Wick`,
+      `John Dutton`
+    ],
+    poster: {
+      src: `img/fantastic-beasts-the-crimes-of-grindelwald.jpg`,
+      alt: `Пираты карбинского моря`,
+    },
+    preview: {
+      src: `https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4`,
+    },
+    addressPage: `movie-page-in-list.html`,
+    runTime: 99,
+    released: 2014,
+  },
+
+  {
+    id: 12,
+    background: {
+      src: `img/pirats.jpg`,
+      alt: `Пираты карбинского моря`,
+    },
+    title: `Пираты карбинского моря214`,
+    genre: `Sci-Fi`,
+    year: `1996`,
+    rating: {
+      score: 8.2,
+      count: 240,
+    },
+    descriptions: [
+      `In the 1930s, the Grand Budapest Hotel is a popular European ski resort, presided over by concierge Gustave H. (Ralph Fiennes). Zero, a junior lobby boy, becomes Gustave's friend and protege.`,
+      `Gustave prides himself on providing first-className service to the hotel's guests, including satisfying the sexual needs of the many elderly women who stay there. When one of Gustave's lovers dies mysteriously, Gustave finds himself the recipient of a priceless painting and the chief suspect in her murder.`
+    ],
+    directors: [
+      `Sas`,
+      `Kek`
+    ],
+    starrings: [
+      `John Wick`,
+      `John Dutton`
+    ],
+    poster: {
+      src: `img/fantastic-beasts-the-crimes-of-grindelwald.jpg`,
+      alt: `Пираты карбинского моря`,
+    },
+    preview: {
+      src: `https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4`,
+    },
+    addressPage: `movie-page-in-list.html`,
+    runTime: 99,
+    released: 2014,
+  },
+
+  {
+    id: 13,
+    background: {
+      src: `img/pirats.jpg`,
+      alt: `Пираты карбинского моря`,
+    },
+    title: `Пираты карбинского моря214`,
+    genre: `Crime`,
+    year: `1996`,
+    rating: {
+      score: 8.2,
+      count: 240,
+    },
+    descriptions: [
+      `In the 1930s, the Grand Budapest Hotel is a popular European ski resort, presided over by concierge Gustave H. (Ralph Fiennes). Zero, a junior lobby boy, becomes Gustave's friend and protege.`,
+      `Gustave prides himself on providing first-className service to the hotel's guests, including satisfying the sexual needs of the many elderly women who stay there. When one of Gustave's lovers dies mysteriously, Gustave finds himself the recipient of a priceless painting and the chief suspect in her murder.`
+    ],
+    directors: [
+      `Sas`,
+      `Kek`
+    ],
+    starrings: [
+      `John Wick`,
+      `John Dutton`
+    ],
+    poster: {
+      src: `img/fantastic-beasts-the-crimes-of-grindelwald.jpg`,
+      alt: `Пираты карбинского моря`,
+    },
+    preview: {
+      src: `https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4`,
+    },
+    addressPage: `movie-page-in-list.html`,
+    runTime: 99,
+    released: 2014,
+  },
 ];
+
 
 const moviesComments = [
   // id1
