@@ -24,13 +24,12 @@ class App extends PureComponent {
   }
 
   _renderApp() {
-    const {promo, movies, moviesComments} = this.props;
+    const {movies, moviesComments} = this.props;
     const {chosenMovieCard} = this.state;
 
     if (chosenMovieCard === null) {
       return (
         <Main
-          promo={promo}
           movies={movies}
           onSelectMovieCardClick={this._handleSelectMovieCardClick}
         />
@@ -40,8 +39,8 @@ class App extends PureComponent {
     if (chosenMovieCard !== null) {
       return (
         <MovieCardDetailted
-          movies={movies}
           movie={chosenMovieCard}
+          movies={movies}
           moviesComments={moviesComments}
           onSelectMovieCardClick={this._handleSelectMovieCardClick}
         />
@@ -65,8 +64,8 @@ class App extends PureComponent {
           <Route exact path="/movie-page-details">
             <MovieCardDetailted
               movie={movies[0]}
-              moviesComments={moviesComments}
               movies={movies}
+              moviesComments={moviesComments}
               onSelectMovieCardClick={this._handleSelectMovieCardClick}
             />
           </Route>
@@ -78,17 +77,13 @@ class App extends PureComponent {
 }
 
 App.propTypes = {
-  promo: PropTypes.shape({
-    title: PropTypes.string.isRequired,
-    genre: PropTypes.string.isRequired,
-    releaseDate: PropTypes.string.isRequired,
-  }).isRequired,
   movies: PropTypes.array.isRequired,
   moviesComments: PropTypes.array.isRequired,
 };
 
 const mapStateToProps = (state) => ({
   movies: state.movies,
+  moviesComments: state.moviesComments,
 });
 
 export {App};

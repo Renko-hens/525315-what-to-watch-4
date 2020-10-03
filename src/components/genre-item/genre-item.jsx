@@ -1,24 +1,27 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const GenreCard = (props) => {
+const GenreItem = (props) => {
   const {genre, activeGenre, onGenreLinkClick} = props;
 
   return (
     <li className={`catalog__genres-item ${genre === activeGenre ? `catalog__genres-item--active` : ``}`}>
       <a href="#" className="catalog__genres-link"
         onClick={(evt) => {
-          onGenreLinkClick(evt, genre);
+          evt.preventDefault();
+          evt.stopPropagation();
+
+          onGenreLinkClick(genre);
         }}
       >{genre}</a>
     </li>
   );
 };
 
-GenreCard.propTypes = {
+GenreItem.propTypes = {
   genre: PropTypes.string.isRequired,
   activeGenre: PropTypes.string.isRequired,
   onGenreLinkClick: PropTypes.func.isRequired,
 };
 
-export default GenreCard;
+export default GenreItem;

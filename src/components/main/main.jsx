@@ -5,12 +5,12 @@ import {connect} from "react-redux";
 import ListMovies from "../movies-list/movie-list.jsx";
 import GenreList from "../genre-list/genre-list.jsx";
 import withVideoPlayer from "../../hocs/with-video-player/with-video-player.js";
-import { ActionCreator } from "../../reducer.js";
+
 
 const ListMoviesWrapped = withVideoPlayer(ListMovies);
 
 const Main = (props) => {
-  const {promo, genre, movies, onSelectMovieCardClick, onGenreLinkClick} = props;
+  const {promoMovie, genre, movies, onSelectMovieCardClick} = props;
 
   return (
     <React.Fragment>
@@ -77,10 +77,10 @@ const Main = (props) => {
             </div>
 
             <div className="movie-card__desc">
-              <h2 className="movie-card__title">{promo.title}</h2>
+              <h2 className="movie-card__title">{promoMovie.title}</h2>
               <p className="movie-card__meta">
-                <span className="movie-card__genre">{promo.genre}</span>
-                <span className="movie-card__year">{promo.releaseDate}</span>
+                <span className="movie-card__genre">{promoMovie.genre}</span>
+                <span className="movie-card__year">{promoMovie.releaseDate}</span>
               </p>
 
               <div className="movie-card__buttons">
@@ -108,7 +108,6 @@ const Main = (props) => {
 
           <GenreList
             activeGenre={genre}
-            onGenreLinkClick={onGenreLinkClick}
           />
 
           <ListMoviesWrapped
@@ -142,31 +141,21 @@ const Main = (props) => {
 
 Main.propTypes = {
   genre: PropTypes.string.isRequired,
-  promo: PropTypes.shape({
+  promoMovie: PropTypes.shape({
     title: PropTypes.string.isRequired,
     genre: PropTypes.string.isRequired,
     releaseDate: PropTypes.string.isRequired,
   }).isRequired,
   movies: PropTypes.array.isRequired,
   onSelectMovieCardClick: PropTypes.func.isRequired,
-  onGenreLinkClick: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = (state) => ({
   genre: state.genre,
-});
-
-const mapDispatchToProps = (dispatch) => ({
-  onGenreLinkClick(evt, genre) {
-    evt.preventDefault();
-    evt.stopPropagation();
-
-    dispatch(ActionCreator.changeGenre(genre));
-    // dispatch(ActionCreator.getMoviesByGenre(genre));
-  },
+  promoMovie: state.promoMovie,
 });
 
 export {Main};
-export default connect(mapStateToProps, mapDispatchToProps)(Main);
+export default connect(mapStateToProps)(Main);
 
 
