@@ -34,6 +34,7 @@ describe(`Render ListCards Components`, () => {
           movies={movies}
           renderCard={() => {}}
           onSelectMovieCardClick={() => {}}
+          numberMoviesShown={8}
         />
     ).toJSON();
 

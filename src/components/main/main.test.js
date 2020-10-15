@@ -98,6 +98,7 @@ describe(`Renders Main components`, () => {
       promoMovie,
       movies,
       moviesComments,
+      numberMoviesShown: 8,
     });
 
     const tree = renderer.create(
@@ -107,6 +108,9 @@ describe(`Renders Main components`, () => {
             promoMovie={promoMovie}
             movies={movies}
             onSelectMovieCardClick={() => {}}
+            numberMoviesShown={8}
+            onGenreLinkClick={() => {}}
+            onButtonClick={() => {}}
           />
         </Provider>).toJSON();
 

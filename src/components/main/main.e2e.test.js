@@ -106,6 +106,7 @@ describe(`Test components Main`, () => {
       promoMovie,
       movies,
       moviesComments,
+      numberMoviesShown: 8,
     });
 
     const main = mount(
@@ -115,6 +116,8 @@ describe(`Test components Main`, () => {
             promoMovie={promoMovie}
             movies={movies}
             onSelectMovieCardClick={onSelectMovieCardClick}
+            onGenreLinkClick={() => {}}
+            onButtonClick={() => {}}
           />
         </Provider>);
 

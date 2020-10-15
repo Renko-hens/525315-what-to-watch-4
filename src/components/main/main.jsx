@@ -2,15 +2,20 @@ import React from "react";
 import PropTypes from "prop-types";
 import {connect} from "react-redux";
 
-import ListMovies from "../movies-list/movie-list.jsx";
 import GenreList from "../genre-list/genre-list.jsx";
 import withVideoPlayer from "../../hocs/with-video-player/with-video-player.js";
+import ListMovies from "../movies-list/movie-list.jsx";
+import CatalogButton from "../catalog-button/catalog-button.jsx";
+
+import {ActionCreator} from "../../reducer.js";
 
 
 const ListMoviesWrapped = withVideoPlayer(ListMovies);
 
 const Main = (props) => {
-  const {promoMovie, genre, movies, onSelectMovieCardClick} = props;
+  const {promoMovie, genre, movies, numberMoviesShown, onGenreLinkClick, onSelectMovieCardClick, onButtonClick} = props;
+
+  const isAllMoviesShown = movies.length <= numberMoviesShown;
 
   return (
     <React.Fragment>
@@ -108,16 +113,25 @@ const Main = (props) => {
 
           <GenreList
             activeGenre={genre}
+            onGenreLinkClick={onGenreLinkClick}
           />
 
           <ListMoviesWrapped
             movies={movies}
             genreType={genre}
             onSelectMovieCardClick={onSelectMovieCardClick}
+            numberMoviesShown={numberMoviesShown}
           />
 
           <div className="catalog__more">
-            <button className="catalog__button" type="button">Show more</button>
+            {
+              isAllMoviesShown ? `` :
+                <CatalogButton
+                  onButtonClick={onButtonClick}
+                >
+                  Show more
+                </CatalogButton>
+            }
           </div>
         </section>
 
@@ -147,15 +161,30 @@ Main.propTypes = {
     releaseDate: PropTypes.string.isRequired,
   }).isRequired,
   movies: PropTypes.array.isRequired,
+  onGenreLinkClick: PropTypes.func.isRequired,
   onSelectMovieCardClick: PropTypes.func.isRequired,
+  onButtonClick: PropTypes.func.isRequired,
+  numberMoviesShown: PropTypes.number,
 };
 
 const mapStateToProps = (state) => ({
   genre: state.genre,
   promoMovie: state.promoMovie,
+  numberMoviesShown: state.numberMoviesShown,
+});
+
+const mapDispatchToProps = (dispatch) => ({
+  onGenreLinkClick(genre) {
+    dispatch(ActionCreator.changeGenre(genre));
+    dispatch(ActionCreator.getMoviesByGenre());
+    dispatch(ActionCreator.resetNumbersShown());
+  },
+  onButtonClick() {
+    dispatch(ActionCreator.addNumbersShown());
+  },
 });
 
 export {Main};
-export default connect(mapStateToProps)(Main);
+export default connect(mapStateToProps, mapDispatchToProps)(Main);
 
 

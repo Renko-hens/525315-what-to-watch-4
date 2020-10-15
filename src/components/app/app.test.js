@@ -98,6 +98,7 @@ describe(`Renders app components`, () => {
       promoMovie,
       movies,
       moviesComments,
+      numberMoviesShown: 8,
     });
 
     const tree = renderer.create(

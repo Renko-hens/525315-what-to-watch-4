@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 import {connect} from "react-redux";
 
 import GenreItem from "../genre-item/genre-item.jsx";
-import {ActionCreator} from "../../reducer.js";
 import {Genres} from "../../const/const.js";
 
 const GenresArray = Object.values(Genres);
@@ -34,12 +33,5 @@ const mapStateToProps = (state) => ({
   genre: state.genre,
 });
 
-const mapDispatchToProps = (dispatch) => ({
-  onGenreLinkClick(genre) {
-    dispatch(ActionCreator.changeGenre(genre));
-    dispatch(ActionCreator.getMoviesByGenre(genre));
-  },
-});
-
 export {GenreList};
-export default connect(mapStateToProps, mapDispatchToProps)(GenreList);
+export default connect(mapStateToProps)(GenreList);
