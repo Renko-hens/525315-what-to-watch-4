@@ -1,12 +1,21 @@
 import React from "react";
 import PropTypes from "prop-types";
-import ListMovies from "../movies-list/movie-list.jsx";
+import {connect} from "react-redux";
+
+import GenreList from "../genre-list/genre-list.jsx";
 import withVideoPlayer from "../../hocs/with-video-player/with-video-player.js";
+import ListMovies from "../movies-list/movie-list.jsx";
+import CatalogButton from "../catalog-button/catalog-button.jsx";
+
+import {ActionCreator} from "../../reducer.js";
+
 
 const ListMoviesWrapped = withVideoPlayer(ListMovies);
 
 const Main = (props) => {
-  const {promo, movies, onSelectMovieCardClick} = props;
+  const {promoMovie, genre, movies, numberMoviesShown, onGenreLinkClick, onSelectMovieCardClick, onButtonClick} = props;
+
+  const isAllMoviesShown = movies.length <= numberMoviesShown;
 
   return (
     <React.Fragment>
@@ -73,10 +82,10 @@ const Main = (props) => {
             </div>
 
             <div className="movie-card__desc">
-              <h2 className="movie-card__title">{promo.title}</h2>
+              <h2 className="movie-card__title">{promoMovie.title}</h2>
               <p className="movie-card__meta">
-                <span className="movie-card__genre">{promo.genre}</span>
-                <span className="movie-card__year">{promo.releaseDate}</span>
+                <span className="movie-card__genre">{promoMovie.genre}</span>
+                <span className="movie-card__year">{promoMovie.releaseDate}</span>
               </p>
 
               <div className="movie-card__buttons">
@@ -102,46 +111,27 @@ const Main = (props) => {
         <section className="catalog">
           <h2 className="catalog__title visually-hidden">Catalog</h2>
 
-          <ul className="catalog__genres-list">
-            <li className="catalog__genres-item catalog__genres-item--active">
-              <a href="#" className="catalog__genres-link">All genres</a>
-            </li>
-            <li className="catalog__genres-item">
-              <a href="#" className="catalog__genres-link">Comedies</a>
-            </li>
-            <li className="catalog__genres-item">
-              <a href="#" className="catalog__genres-link">Crime</a>
-            </li>
-            <li className="catalog__genres-item">
-              <a href="#" className="catalog__genres-link">Documentary</a>
-            </li>
-            <li className="catalog__genres-item">
-              <a href="#" className="catalog__genres-link">Dramas</a>
-            </li>
-            <li className="catalog__genres-item">
-              <a href="#" className="catalog__genres-link">Horror</a>
-            </li>
-            <li className="catalog__genres-item">
-              <a href="#" className="catalog__genres-link">Kids & Family</a>
-            </li>
-            <li className="catalog__genres-item">
-              <a href="#" className="catalog__genres-link">Romance</a>
-            </li>
-            <li className="catalog__genres-item">
-              <a href="#" className="catalog__genres-link">Sci-Fi</a>
-            </li>
-            <li className="catalog__genres-item">
-              <a href="#" className="catalog__genres-link">Thrillers</a>
-            </li>
-          </ul>
+          <GenreList
+            activeGenre={genre}
+            onGenreLinkClick={onGenreLinkClick}
+          />
 
           <ListMoviesWrapped
             movies={movies}
+            genreType={genre}
             onSelectMovieCardClick={onSelectMovieCardClick}
+            numberMoviesShown={numberMoviesShown}
           />
 
           <div className="catalog__more">
-            <button className="catalog__button" type="button">Show more</button>
+            {
+              isAllMoviesShown ? `` :
+                <CatalogButton
+                  onButtonClick={onButtonClick}
+                >
+                  Show more
+                </CatalogButton>
+            }
           </div>
         </section>
 
@@ -164,14 +154,37 @@ const Main = (props) => {
 };
 
 Main.propTypes = {
-  promo: PropTypes.shape({
+  genre: PropTypes.string.isRequired,
+  promoMovie: PropTypes.shape({
     title: PropTypes.string.isRequired,
     genre: PropTypes.string.isRequired,
     releaseDate: PropTypes.string.isRequired,
   }).isRequired,
   movies: PropTypes.array.isRequired,
+  onGenreLinkClick: PropTypes.func.isRequired,
   onSelectMovieCardClick: PropTypes.func.isRequired,
+  onButtonClick: PropTypes.func.isRequired,
+  numberMoviesShown: PropTypes.number,
 };
 
+const mapStateToProps = (state) => ({
+  genre: state.genre,
+  promoMovie: state.promoMovie,
+  numberMoviesShown: state.numberMoviesShown,
+});
 
-export default Main;
+const mapDispatchToProps = (dispatch) => ({
+  onGenreLinkClick(genre) {
+    dispatch(ActionCreator.changeGenre(genre));
+    dispatch(ActionCreator.getMoviesByGenre());
+    dispatch(ActionCreator.resetNumbersShown());
+  },
+  onButtonClick() {
+    dispatch(ActionCreator.addNumbersShown());
+  },
+});
+
+export {Main};
+export default connect(mapStateToProps, mapDispatchToProps)(Main);
+
+

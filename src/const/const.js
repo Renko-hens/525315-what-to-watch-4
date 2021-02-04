@@ -4,7 +4,6 @@ export const TabType = {
   REVIEWS: `reviews`,
 };
 
-
 export const Genres = {
   ALL: `All genres`,
   COMEDIES: `Comedies`,

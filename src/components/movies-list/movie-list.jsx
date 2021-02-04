@@ -1,13 +1,27 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import {Genres} from "../../const/const.js";
+import {filterMovies} from "../../utils.js";
+
+const ModeMovieList = {
+  DEFAULT: 8,
+  DETAILTED: 4,
+};
 
 const ListMovies = (props) => {
-  const {movies, renderCard, onSelectMovieCardClick, genreType = Genres.ALL, numberOfCards = 8} = props;
+  const {movies, genreType, renderCard, numberMoviesShown, numberOfCards = ModeMovieList.DEFAULT, onSelectMovieCardClick} = props;
 
-  const filteredMovies = movies.filter((movie) => movie.genre === genreType);
-  const newMovies = genreType === Genres.ALL ? movies.slice(0, numberOfCards) : filteredMovies.slice(0, numberOfCards);
+  let newMovies = null;
+
+  switch (numberOfCards) {
+    case ModeMovieList.DETAILTED:
+      newMovies = filterMovies(movies, genreType).slice(0, ModeMovieList.DETAILTED);
+      break;
+
+    case ModeMovieList.DEFAULT:
+      newMovies = movies.slice(0, numberMoviesShown);
+      break;
+  }
 
   return (
     <div className="catalog__movies-list">
@@ -21,9 +35,10 @@ const ListMovies = (props) => {
 ListMovies.propTypes = {
   renderCard: PropTypes.func.isRequired,
   movies: PropTypes.array.isRequired,
-  onSelectMovieCardClick: PropTypes.func.isRequired,
+  numberMoviesShown: PropTypes.number,
   genreType: PropTypes.string,
   numberOfCards: PropTypes.number,
+  onSelectMovieCardClick: PropTypes.func.isRequired,
 };
 
 export default ListMovies;
